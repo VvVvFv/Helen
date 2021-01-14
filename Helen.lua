@@ -7947,11 +7947,13 @@ send(msg.chat_id_,msg.id_,'- شترك في قناة البوت اولآ [@SR_JO]
 return false 
 end
 Text = [[
-*- Helrn Team .*
+*- Helen Team .*
  — — — — — — — — — 
      
 [⌔︙ Helen 𝖲𝗈𝗎𝗋𝖼𝖾  .](http://t.me/SR_JO)
-     
+
+[⌔︙ Bots Maker  .](http://t.me/Nx8BoT)
+
 [⌔︙  Dev .](http://t.me/VvVvFv)
 ]]
 send(msg.chat_id_, msg.id_,Text)
