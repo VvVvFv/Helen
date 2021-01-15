@@ -17,14 +17,12 @@ print("\27[34m"..[[
 >> Best Source in Telegram
 >> Features fast and powerful
 
-__         __                                   __                           
-|  |        |   |          _________       |    |                          ________         ___                ___
-|  |        |   |          |   ______|        |    |                         |    _ ___ |        |         \         /     /
-|  ———    |          |  | _____          |    |                         |  |______        |    |\    \      /     /
-|  ———    |          |  | ______|       |    |                         |   ______|       |    |   \    \       /
-|  |         |   |         |   |______         |    |________          |   |_____         |    |     \        /
-|  |         |   |         |________|         |__________|          |_______|        |__|        \__/
-__         __
+██╗░░██╗███████╗██╗░░░░░███████╗███╗░░██
+██║░░██║██╔════╝██║░░░░░██╔════╝████╗░██
+███████║█████╗░░██║░░░░░█████╗░░██╔██╗██
+██╔══██║██╔══╝░░██║░░░░░██╔══╝░░██║╚████
+██║░░██║███████╗███████╗███████╗██║░╚███
+
 
 ]].."\27[m")
 
@@ -7819,7 +7817,7 @@ send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
 if DevHelen(msg) then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/Helen/files_Helen/master/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/VvVvFv/files_Helen/master/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
@@ -7857,7 +7855,7 @@ t = "*♬︙ الملف » {"..file.."}\n♬︙ تم تعطيله وحذفه ب�
 else
 t = "*♬︙ بالتاكيد تم تعطيل وحذف ملف » {"..file.."} \n✓*"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/Helen/files_Helen/master/files_Helen/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/VvVvFv/Files_helen/master/Files_helen/"..file)
 if res == 200 then
 os.execute("rm -fr Helen_Files/"..file)
 send(msg.chat_id_, msg.id_,t) 
@@ -7877,7 +7875,7 @@ t = "*♬︙ بالتاكيد تم تنزيل وتفعيل ملف » {"..file.."
 else
 t = "*♬︙ الملف » {"..file.."}\n♬︙ تم تنزيله وتفعيله بنجاح \n*"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/Helen/files_Helen/master/files_Helen/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/VvVvFv/Files_helen/master/Files_helen/"..file)
 if res == 200 then
 local chek = io.open("Helen_Files/"..file,'w+')
 chek:write(json_file)
