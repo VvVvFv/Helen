@@ -7955,7 +7955,7 @@ Text = [[
 
 [♬︙ Source Channel .](http://t.me/KS_KK)
 
-[♬︙ 𝖲𝗈𝗎𝗋𝖼𝖾 Channel  .](http://t.me/KS_KK)
+[♬︙ 𝖲𝗈𝗎𝗋𝖼𝖾 Channel  .](http://t.me/SR_JO)
 
 [♬︙ Bots Maker  .](http://t.me/Nx8BoT)
 
