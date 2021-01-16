@@ -7877,7 +7877,7 @@ t = "*♬︙  بالتاكيد تم تنزيل وتفعيل ملف \n♬︙ ال
 else
 t = "*♬︙  الملف -› {"..file.."}\n♬︙  تم تنزيله وتفعيله بنجاح \n√*"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/VvVvFv/Files_helen/master/Files_Helen/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/VvVvFv/Files_helen/master/Files_helen/"..file)
 if res == 200 then
 local chek = io.open("Helen_Files/"..file,'w+')
 chek:write(json_file)
