@@ -7819,29 +7819,29 @@ send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
 if DevHelen(msg) then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/Helen/files_Helen/master/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/VvVvFv/Files_helen/master/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n♬︙اهلا بك في متجر ملفات هيلين\n♬︙يوجد في المتجر ملف الردود\n♬︙يتم ادراج الملفات في التحديثات القادمه \n — — — — — — — — — \n"
-local TextE = "\n — — — — — — — — — \n♬︙تدل علامة (✔) الملف مفعل\n".."♬︙تدل علامة (✖) الملف معطل\n"
+local TextS = "\n*♬︙ اهلا بك في متجر ملفات هيلين *\n*♬︙ يوجد في المتجر جميع ملفات السورس *\n*♬︙ الملفات الموجوده حاليا ↓ *\n*ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ*\n\n"
+local TextE = "*ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ*\n*♬︙ تعني علامة (√) الملف مفعل*\n".."*♬︙ تعني علامة (×) الملف معطل*\n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
 local Check_File_is_Found = io.open("Helen_Files/"..name,"r")
 if Check_File_is_Found then
 io.close(Check_File_is_Found)
-CeckFile = "(✔)"
+CeckFile = "*(√)*"
 else
-CeckFile = "(✖)"
+CeckFile = "*(×)*"
 end
 NumFile = NumFile + 1
-TextS = TextS..'*'..NumFile.."»* {`"..name..'`} » '..CeckFile..'\n[-  About to the file]('..Info..')\n'
+TextS = TextS..'*'..NumFile.." -›* {`"..name..'`} -› '..CeckFile..'\n [Explained Files 👁️]('..Info..')\n\n'
 end
 send(msg.chat_id_, msg.id_,TextS..TextE) 
 end
 else
-send(msg.chat_id_, msg.id_,"♬︙ لا يوجد اتصال من ال api \n") 
+send(msg.chat_id_, msg.id_,"*♬︙  لا يوجد اتصال من ال api*") 
 end
 return false
 end
@@ -7853,17 +7853,17 @@ local file = name_t[2]..'.lua'
 local file_bot = io.open("Helen_Files/"..file,"r")
 if file_bot then
 io.close(file_bot)
-t = "*♬︙ الملف » {"..file.."}\n♬︙ تم تعطيله وحذفه بنجاح \n✓*"
+t = "*♬︙  الملف -› {"..file.."}\n♬︙  تم تعطيله وحذفه بنجاح \n√*"
 else
-t = "*♬︙ بالتاكيد تم تعطيل وحذف ملف » {"..file.."} \n✓*"
+t = "*♬︙  بالتاكيد تم تعطيل وحذف ملف \n♬︙  الملف -› {"..file.."} \n√*"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/Helen/files_Helen/master/files_Helen/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/VvVvFv/Files_helen/master/Files_helen/"..file)
 if res == 200 then
 os.execute("rm -fr Helen_Files/"..file)
 send(msg.chat_id_, msg.id_,t) 
 dofile('Helen.lua')  
 else
-send(msg.chat_id_, msg.id_,"*♬︙ عذرا لا يوجد هاكذا ملف في المتجر *\n") 
+send(msg.chat_id_, msg.id_,"*♬︙  عذرا لا يوجد هاكذا ملف في المتجر *\n") 
 end
 return false
 end
@@ -7873,11 +7873,11 @@ local file = name_t[2]..'.lua'
 local file_bot = io.open("Helen_Files/"..file,"r")
 if file_bot then
 io.close(file_bot)
-t = "*♬︙ بالتاكيد تم تنزيل وتفعيل ملف » {"..file.."} \n✓*"
+t = "*♬︙  بالتاكيد تم تنزيل وتفعيل ملف \n♬︙ الملف -› {"..file.."} \n√*"
 else
-t = "*♬︙ الملف » {"..file.."}\n♬︙ تم تنزيله وتفعيله بنجاح \n*"
+t = "*♬︙  الملف -› {"..file.."}\n♬︙  تم تنزيله وتفعيله بنجاح \n√*"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/Helen/files_Helen/master/files_Helen/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/VvVvFv/Files_helen/master/Files_Helen/"..file)
 if res == 200 then
 local chek = io.open("Helen_Files/"..file,'w+')
 chek:write(json_file)
@@ -7885,13 +7885,13 @@ chek:close()
 send(msg.chat_id_, msg.id_,t) 
 dofile('Helen.lua')  
 else
-send(msg.chat_id_, msg.id_,"*♬︙ عذرا لا يوجد هاكذا ملف في المتجر *\n") 
+send(msg.chat_id_, msg.id_,"*♬︙  عذرا لا يوجد هاكذا ملف في المتجر *\n") 
 end
 return false
 end
 if text == "مسح جميع الملفات" and DevHelen(msg) then
 os.execute("rm -fr Helen_Files/*")
-send(msg.chat_id_,msg.id_,"♬︙تم حذف جميع الملفات")
+send(msg.chat_id_,msg.id_,"♬︙ تم حذف جميع الملفات")
 return false
 end
 if text == 'نقل الاحصائيات' and DevHelen(msg) then
