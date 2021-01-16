@@ -7953,7 +7953,9 @@ Text = [[
 *- Helen Team .*
  — — — — — — — — — 
 
-[♬︙ 𝖲𝗈𝗎𝗋𝖼𝖾 Channel  .](http://t.me/SR_JO)
+[♬︙ Source Channel .](http://t.me/KS_KK)
+
+[♬︙ 𝖲𝗈𝗎𝗋𝖼𝖾 Channel  .](http://t.me/KS_KK)
 
 [♬︙ Bots Maker  .](http://t.me/Nx8BoT)
 
