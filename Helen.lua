@@ -7836,7 +7836,7 @@ else
 CeckFile = "*(×)*"
 end
 NumFile = NumFile + 1
-TextS = TextS..'*'..NumFile.." -›* {`"..name..'`} -› '..CeckFile..'\n [Explained Files 👁️]('..Info..')\n\n'
+TextS = TextS..'*'..NumFile.." -›* {`"..name..'`} -› '..CeckFile..'\n ['..Info..'](t.me/KS_KK)\n\n'
 end
 send(msg.chat_id_, msg.id_,TextS..TextE) 
 end
