@@ -1733,12 +1733,7 @@ Reply_Status(msg,msg.sender_user_id_,"unlock","⌔️︙تم فتح الفيدي
 return false
 end 
 if text == "قفل المتحركه" and Addictive(msg) then  
-local url,res = https.request('https://sjod.ga/API/Sub/index.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.info ~= true then
-send(msg.chat_id_,msg.id_,'- شترك في قناة البوت اولآ [@SR_JO] .')   
-return false 
-end
+
 database:set(bot_id.."Helen:Lock:Animation"..msg.chat_id_,"del")  
 Reply_Status(msg,msg.sender_user_id_,"lock","⌔️︙تم قفـل المتحركه")  
 return false
@@ -5644,7 +5639,14 @@ if text == "تعطيل ردود المطور" and Owner(msg) then
 database:set(bot_id.."Helen:Reply:Sudo"..msg.chat_id_,true)   
 send(msg.chat_id_, msg.id_,"♬︙تم تعطيل ردود المطور" ) 
 end
-
+if text == "الرابط" or text=="رفع مميز" or text=="رفع ادمن" or text=="تنزيل الكل" or text=="رفع مدير" or text=="سورس"  then 
+local url,res = https.request('https://sjod.ga/API/Sub/index.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.info ~= true then
+send(msg.chat_id_,msg.id_,'- شترك في قناة البوت اولآ [@SR_JO] .')   
+return false 
+end
+end
 
 if text == ("تنزيل الكل") and msg.reply_to_message_id_ ~= 0 and Owner(msg) then
 if AddChannel(msg.sender_user_id_) == false then
@@ -7943,12 +7945,7 @@ send(msg.chat_id_, msg.id_, "♬︙تم التحديث")
 end
 
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
-local url,res = https.request('https://sjod.ga/API/Sub/index.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.info ~= true then
-send(msg.chat_id_,msg.id_,'- شترك في قناة البوت اولآ [@SR_JO] .')   
-return false 
-end
+
 Text = [[
 *- Helen Team .*
  — — — — — — — — — 
