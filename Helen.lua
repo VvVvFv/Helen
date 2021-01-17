@@ -442,7 +442,7 @@ end
 function Reply_Status(msg,user_id,status,text)
 tdcli_function ({ID = "GetUser",user_id_ = user_id},function(arg,data) 
 if data.first_name_ ~= false then
-local UserName = (data.username_ or "HelenTEAM")
+local UserName = (data.username_ or "SR_JO")
 for Helen in string.gmatch(data.first_name_, "[^%s]+") do
 data.first_name_ = Helen
 end
@@ -6076,7 +6076,7 @@ if b.first_name_ == false then
 send(msg.chat_id_, msg.id_,"♬︙ حساب المنشئ محذوف")
 return false  
 end
-local UserName = (b.username_ or "HelenTEAM")
+local UserName = (b.username_ or "SR_JO")
 send(msg.chat_id_, msg.id_,"♬︙منشئ المجموعه ~ ["..b.first_name_.."](T.me/"..UserName..")")  
 end,nil)   
 end
@@ -6096,7 +6096,7 @@ if b.first_name_ == false then
 send(msg.chat_id_, msg.id_,"♬︙حساب المنشئ محذوف")
 return false  
 end
-local UserName = (b.username_ or "HelenTEAM")
+local UserName = (b.username_ or "SR_JO")
 send(msg.chat_id_, msg.id_,"♬︙تم ترقية منشئ المجموعه ~ ["..b.first_name_.."](T.me/"..UserName..")")  
 database:sadd(bot_id.."Helen:Basic:Constructor"..msg.chat_id_,b.id_)
 end,nil)   
