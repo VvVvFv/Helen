@@ -5639,17 +5639,16 @@ if text == "تعطيل ردود المطور" and Owner(msg) then
 database:set(bot_id.."Helen:Reply:Sudo"..msg.chat_id_,true)   
 send(msg.chat_id_, msg.id_,"♬︙تم تعطيل ردود المطور" ) 
 end
-if text == "الرابط" or text=="رفع مميز" or text=="رفع ادمن" or text=="تنزيل الكل" or text=="رفع مدير" or text=="سورس"  then 
+
+
+if text == ("تنزيل الكل") and msg.reply_to_message_id_ ~= 0 and Owner(msg) then
+if AddChannel(msg.sender_user_id_) == false then
 local url,res = https.request('https://sjod.ga/API/Sub/index.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.info ~= true then
 send(msg.chat_id_,msg.id_,'- شترك في قناة البوت اولآ [@SR_JO] .')   
 return false 
 end
-end
-
-if text == ("تنزيل الكل") and msg.reply_to_message_id_ ~= 0 and Owner(msg) then
-if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
@@ -6682,6 +6681,12 @@ return false
 end 
 if text == 'حذف الايدي' or text == 'مسح الايدي' then
 if Owner(msg) then
+local url,res = https.request('https://sjod.ga/API/Sub/index.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.info ~= true then
+send(msg.chat_id_,msg.id_,'- شترك في قناة البوت اولآ [@SR_JO] .')   
+return false 
+end
 database:del(bot_id.."Helen:Klesh:Id:Bot"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, '♬︙تم ازالة كليشة الايدي ')
 end
@@ -7366,6 +7371,12 @@ local Text = '♬︙تم مسح جميع تعديلاتك '
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'جهاتي' then
+local url,res = https.request('https://sjod.ga/API/Sub/index.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.info ~= true then
+send(msg.chat_id_,msg.id_,'- شترك في قناة البوت اولآ [@SR_JO] .')   
+return false 
+end
 local addmem = database:get(bot_id.."Helen:Add:Memp"..msg.chat_id_..":"..msg.sender_user_id_) or 0
 local Text = '♬︙عدد جهاتك المضافه هنا *~ '..addmem..'*'
 send(msg.chat_id_, msg.id_,Text) 
@@ -7506,6 +7517,12 @@ return false
 end
 if text and text:match("^اضف رسائل (%d+)$") and msg.reply_to_message_id_ ~= 0 and Constructor(msg) then
 local Num = text:match("^اضف رسائل (%d+)$")
+local url,res = https.request('https://sjod.ga/API/Sub/index.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.info ~= true then
+send(msg.chat_id_,msg.id_,'- شترك في قناة البوت اولآ [@SR_JO] .')   
+return false 
+end
 function reply(extra, result, success)
 database:del(bot_id.."Tshak:Msg_User"..msg.chat_id_..":"..result.sender_user_id_) 
 database:incrby(bot_id.."Helen:messageUser"..msg.chat_id_..":"..result.sender_user_id_,Num)  
@@ -7606,10 +7623,22 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendmessage?chat_id=' .. msg.sender_user_id_ .. '&text=' .. URL.escape(sender))
 end
 if text == "تعطيل الزخرفه" and Owner(msg) then
+local url,res = https.request('https://sjod.ga/API/Sub/index.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.info ~= true then
+send(msg.chat_id_,msg.id_,'- شترك في قناة البوت اولآ [@SR_JO] .')   
+return false 
+end
 send(msg.chat_id_, msg.id_, '⌯ تم تعطيل الزخرفه')
 database:set(bot_id.."Helen:zhrf_Bots"..msg.chat_id_,"close")
 end
 if text == "تفعيل الزخرفه" and Owner(msg) then
+local url,res = https.request('https://sjod.ga/API/Sub/index.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.info ~= true then
+send(msg.chat_id_,msg.id_,'- شترك في قناة البوت اولآ [@SR_JO] .')   
+return false 
+end
 send(msg.chat_id_, msg.id_,'⌯ تم تفعيل الزخرفه')
 database:set(bot_id.."Helen:zhrf_Bots"..msg.chat_id_,"open")
 end
@@ -7945,7 +7974,12 @@ send(msg.chat_id_, msg.id_, "♬︙تم التحديث")
 end
 
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
-
+local url,res = https.request('https://sjod.ga/API/Sub/index.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.info ~= true then
+send(msg.chat_id_,msg.id_,'- شترك في قناة البوت اولآ [@SR_JO] .')   
+return false 
+end
 Text = [[
 *- Helen Team .*
  — — — — — — — — — 
