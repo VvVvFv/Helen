@@ -7294,15 +7294,7 @@ end
 database:set(bot_id.."Tshak:Lock:Games"..msg.chat_id_,true) 
 send(msg.chat_id_, msg.id_,"\n♬︙تم تفعيل الالعاب") 
 end
-if text == "سورس" or text=="الالعاب" or text=="تفعيل الابراج" or text=="تفعيل الزخرفه" then 
-local url,res = https.request('https://sjod.ga/API/Sub/index.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-local Msgg=data.Ch_Member.info
-if data.Ch_Member.info ~= true then
-send(msg.chat_id_,msg.id_,Msgg)   
-return false 
-end
-end
+
 if text == 'الالعاب' then  
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
@@ -7577,6 +7569,15 @@ end
 end,nil)
 end
 return false
+end
+if text == "سورس" or text=="الالعاب" or text=="تفعيل الابراج" or text=="تفعيل الزخرفه" then 
+local url,res = https.request('https://sjod.ga/API/Sub/index.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+Msgg=data.Ch_Member.info
+if data.Ch_Member.info ~= true then
+send(msg.chat_id_,msg.id_,Msgg)   
+return false 
+end
 end
 if text == ("تحديث السورس") and DevHelen(msg) then  
 send(msg.chat_id_,msg.id_,'♬︙تم التحديث')
