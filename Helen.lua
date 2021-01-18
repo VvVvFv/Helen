@@ -7570,7 +7570,7 @@ end,nil)
 end
 return false
 end
-if text == "سورس" or text=="الالعاب" or text=="تفعيل الابراج" or text=="تفعيل الزخرفه" then 
+if text == "سورس"  or  text == "تفعيل حساب العمر" or  text == "السورس" or text=="الالعاب" or text=="تفعيل الابراج" or text=="تفعيل الزخرفه" then 
 local url,res = https.request('https://sjod.ga/API/Sub/index.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 Msgg=data.Ch_Member.info
