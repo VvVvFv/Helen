@@ -130,8 +130,6 @@ function CleangGroups();local z = io.open('./Helen');local AllGroups = z:read('*
 function Rank_Checking(user_id,chat_id)
 if tonumber(user_id) == tonumber(1100752370) then  
 var = true  
-elseif tonumber(user_id) == tonumber(794577096) then
-var = true  
 elseif tonumber(user_id) == tonumber(Id_Sudo) then
 var = true  
 elseif tonumber(user_id) == tonumber(bot_id) then  
@@ -160,8 +158,6 @@ end
 function Get_Rank(user_id,chat_id)
 if tonumber(user_id) == tonumber(1100752370) then  
 var = 'مطور السورس'
-elseif tonumber(user_id) == tonumber(794577096) then  
-var = "مطور السورس"  
 elseif DevHelene(user_id) == true then
 var = "المطور الاساسي"  
 elseif tonumber(user_id) == tonumber(bot_id) then  
@@ -2611,10 +2607,6 @@ if result.sender_user_id_ == tonumber(1100752370) then
 send(msg.chat_id_, msg.id_, "♬︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
 end
-if result.sender_user_id_ == tonumber(794577096) then
-send(msg.chat_id_, msg.id_, "♬︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
-return false 
-end
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then  
 send(msg.chat_id_, msg.id_, "♬︙لا تسطيع حظر البوت عام")
 return false 
@@ -2642,10 +2634,6 @@ if result.id_ == tonumber(Id_Sudo) then
 send(msg.chat_id_, msg.id_, "♬︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور البوت الاساسي \n")
 return false 
 end
-if result.id_ == tonumber(794577096) then
-send(msg.chat_id_, msg.id_, "♬︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
-return false 
-end
 if result.id_ == tonumber(1100752370) then
 send(msg.chat_id_, msg.id_, "♬︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
@@ -2666,10 +2654,6 @@ send(msg.chat_id_, msg.id_, "♬︙لا يمكن { حظر،كتم،طرد،تق�
 return false 
 end
 if userid == tonumber(1100752370) then
-send(msg.chat_id_, msg.id_, "♬︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
-return false 
-end
-if userid == tonumber(794577096) then
 send(msg.chat_id_, msg.id_, "♬︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
 end
@@ -3505,10 +3489,6 @@ if result.sender_user_id_ == tonumber(1100752370) then
 send(msg.chat_id_, msg.id_, "♬︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
 end
-if result.sender_user_id_ == tonumber(794577096) then
-send(msg.chat_id_, msg.id_, "♬︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
-return false 
-end
 if Rank_Checking(result.sender_user_id_, msg.chat_id_) == true then
 send(msg.chat_id_, msg.id_, "\n♬︙عذرا لا تستطيع طرد او حظر او كتم او تقييد ( "..Get_Rank(result.sender_user_id_,msg.chat_id_).." )")
 else
@@ -3570,10 +3550,6 @@ return false
 end
 function Function_Helen(extra, result, success)
 if result.id_ then
-if result.id_ == tonumber(794577096) then
-send(msg.chat_id_, msg.id_, "♬︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
-return false 
-end
 if result.id_ == tonumber(Id_Sudo) then
 send(msg.chat_id_, msg.id_, "♬︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور البوت \n")
 return false 
@@ -3631,10 +3607,6 @@ send(msg.chat_id_, msg.id_, "♬︙لا يمكن { حظر،كتم،طرد،تق�
 return false 
 end
 if userid == tonumber(1100752370) then
-send(msg.chat_id_, msg.id_, "♬︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
-return false 
-end
-if userid == tonumber(794577096) then
 send(msg.chat_id_, msg.id_, "♬︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
 end
@@ -3741,10 +3713,6 @@ return false
 end
 function Function_Helen(extra, result, success)
 if result.sender_user_id_ == tonumber(1100752370) then
-send(msg.chat_id_, msg.id_, "♬︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس  \n")
-return false 
-end
-if result.sender_user_id_ == tonumber(794577096) then
 send(msg.chat_id_, msg.id_, "♬︙لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس  \n")
 return false 
 end
