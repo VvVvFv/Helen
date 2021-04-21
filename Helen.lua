@@ -7749,7 +7749,7 @@ database:set(bot_id.."Helen:zhrf_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^زخرفه (.*)$") and database:get(bot_id.."Helen:zhrf_Bots"..msg.chat_id_) == "open" then
 local TextZhrfa = text:match("^زخرفه (.*)$")
-zh = https.request('https://Helen-source.tk/HelenTeAM/frills.php?en='..URL.escape(TextZhrfa)..'')
+zh = https.request('https://black-source.tk/blackTeAM/frills.php?en='..URL.escape(TextZhrfa)..'')
 zx = JSON.decode(zh)
 t = "\n 𖣏️︙قائمه الزخرفه \n — — — — — — — — — \n"
 i = 0
@@ -7769,7 +7769,7 @@ database:set(bot_id.."Helen:brj_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^برج (.*)$") and database:get(bot_id.."Helen:brj_Bots"..msg.chat_id_) == "open" then
 local Textbrj = text:match("^برج (.*)$")
-gk = https.request('https://Helen-source.tk/HelenTeAM/Horoscopes.php?br='..URL.escape(Textbrj)..'')
+gk = https.request('https://black-source.tk/blackTeAM/Horoscopes.php?br='..URL.escape(Textbrj)..'')
 br = JSON.decode(gk)
 send(msg.chat_id_, msg.id_, br.ok.hso)
 end
@@ -7783,7 +7783,7 @@ database:set(bot_id.."Helen:age_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^احسب (.*)$") and database:get(bot_id.."Helen:age_Bots"..msg.chat_id_) == "open" then
 local Textage = text:match("^احسب (.*)$")
-ge = https.request('https://Helen-source.tk/HelenTeAM/Calculateage.php?age='..URL.escape(Textage)..'')
+ge = https.request('https://black-source.tk/blackTeAM/Calculateage.php?age='..URL.escape(Textage)..'')
 ag = JSON.decode(ge)
 send(msg.chat_id_, msg.id_, ag.ok.hso)
 end
@@ -7797,7 +7797,7 @@ database:set(bot_id.."Helen:insta_bot"..msg.chat_id_,"open")
 end
 if text and text:match("^معلومات (.*)$") and database:get(bot_id.."Helen:insta_bot"..msg.chat_id_) == "open" then
 local Textni = text:match("^معلومات (.*)$")
-data,res = https.request('https://Helen-source.tk/HelenTeAM/infoInstagram.php?username='..URL.escape(Textni)..'')
+data,res = https.request('https://black-source.tk/blackTeAM/infoInstagram.php?username='..URL.escape(Textni)..'')
 if res == 200 then
 muaed = json:decode(data)
 if muaed.Info == true then
@@ -7817,7 +7817,7 @@ end
 
 if text and text:match("^فلم (.*)$") and database:get(bot_id.."Helen:movie_bot"..msg.chat_id_) == "open" then
 local Textm = text:match("^فلم (.*)$")
-data,res = https.request('https://Helen-source.tk/HelenTeAM/movie.php?serch='..URL.escape(Textm)..'')
+data,res = https.request('https://black-source.tk/blackTeAM/movie.php?serch='..URL.escape(Textm)..'')
 if res == 200 then
 getmo = json:decode(data)
 if getmo.Info == true then
@@ -7833,7 +7833,7 @@ end
 end
 end
 if text == "غنيلي" then
-data,res = https.request('https://Helen-source.tk/HelenTeAM/audios.php')
+data,res = https.request('https://black-source.tk/blackTeAM/audios.php')
 if res == 200 then
 audios = json:decode(data)
 if audios.Info == true then
@@ -7853,7 +7853,7 @@ send(msg.chat_id_, msg.id_, Textxt)
 end
 if (msg.content_.sticker_)  and msg.reply_to_message_id_ == 0 and database:get(bot_id.."Helen:Lock:Xn"..msg.chat_id_)=="del" then      
 sticker_id = msg.content_.sticker_.sticker_.persistent_id_
-st = https.request('https://Helen-source.tk/HelenTeAM/ImageInfo.php?token='..token..'&url='..sticker_id.."&type=sticker")
+st = https.request('https://black-source.tk/blackTeAM/ImageInfo.php?token='..token..'&url='..sticker_id.."&type=sticker")
 eker = JSON.decode(st)
 if eker.ok.Info == "Indecent" then
 local list = database:smembers(bot_id.."Helen:Basic:Constructor"..msg.chat_id_)
@@ -7875,7 +7875,7 @@ end
 end
 if (msg.content_.photo_) and msg.reply_to_message_id_ == 0 and database:get(bot_id.."Helen:Lock:Xn"..msg.chat_id_)=="del" then
 photo_id = msg.content_.photo_.sizes_[1].photo_.persistent_id_  
-Srrt = https.request('https://Helen-source.tk/HelenTeAM/ImageInfo.php?token='..token..'&url='..photo_id.."&type=photo")
+Srrt = https.request('https://black-source.tk/blackTeAM/ImageInfo.php?token='..token..'&url='..photo_id.."&type=photo")
 Sto = JSON.decode(Srrt)
 if Sto.ok.Info == "Indecent" then
 local list = database:smembers(bot_id.."Helen:Basic:Constructor"..msg.chat_id_)
@@ -8174,7 +8174,7 @@ if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or tex
 local url,res = https.request('https://sjod.ga/API/Sub/index.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.info ~= true then
-send(msg.chat_id_,msg.id_,' 𖣏︙شترك في قناة السورس اولآ @KS_KK .')   
+send(msg.chat_id_,msg.id_,' 𖣏︙شترك في قناة السورس اولآ [@SR_JO] .')   
 return false 
 end
 Text = [[
