@@ -8174,7 +8174,7 @@ if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or tex
 local url,res = https.request('https://sjod.ga/API/Sub/index.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.info ~= true then
-send(msg.chat_id_,msg.id_,' 𖣏︙شترك في قناة السورس اولآ [@SR_JO] .')   
+send(msg.chat_id_,msg.id_,' 𖣏︙شترك في قناة السورس اولآ @SR_JO .')   
 return false 
 end
 Text = [[
