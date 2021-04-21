@@ -8173,8 +8173,9 @@ end
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
 local url,res = https.request('https://sjod.ga/API/Sub/index.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
+Msgg=data.Ch_Member.info
 if data.Ch_Member.info ~= true then
-send(msg.chat_id_,msg.id_,' 𖣏︙شترك في قناة السورس اولآ @SR_JO .')   
+send(msg.chat_id_,msg.id_,Msgg)   
 return false 
 end
 Text = [[
@@ -8682,7 +8683,7 @@ if start then
 Test = start
 else
 tdcli_function ({ID = "GetUser",user_id_ = Sudo},function(arg,data) 
-Test = ' 𖣏︙مرحبا انا بوت حماية كروبات\n 𖣏︙وضيفتي حماية المجموعات من السبام والتفليش والخ...\n 𖣏︙لتفعيل البوت اضفني الى مجموعاتك قم برفعي مشرف ثم ارسل تفعيل \n 𖣏︙معرف المطور @['..data.username_..']'
+Test = ' 𖣏︙مرحبا انا بوت حماية كروبات\n ??︙وضيفتي حماية المجموعات من السبام والتفليش والخ...\n 𖣏︙لتفعيل البوت اضفني الى مجموعاتك قم برفعي مشرف ثم ارسل تفعيل \n 𖣏︙معرف المطور @['..data.username_..']'
 end,nil)
 end 
 send(msg.chat_id_, msg.id_, Test) 
