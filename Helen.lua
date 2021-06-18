@@ -441,7 +441,7 @@ ID="InputMessageAudio",
 audio_ = GetInputFile(audio),
 duration_ = "",
 title_ = title or "",
-performer_ = "سورس بلاك الرسمي",
+performer_ = "سورس هيلين الرسمي",
 caption_ = caption or ""
 }},func or dl_cb,nil)
 end
@@ -6577,7 +6577,7 @@ database:set(bot_id.."Helen:Left:Bot"..msg.chat_id_,true)
 send(msg.chat_id_, msg.id_, "𖣏︙تم تعطيل مغادرة البوت") 
 return false 
 end
-if text == (database:get(bot_id.."Helen:Name:Bot") or "بلاك") then
+if text == (database:get(bot_id.."Helen:Name:Bot") or "هيلين") then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -6587,7 +6587,7 @@ send(msg.chat_id_, msg.id_,'𖣏︙عـليك الاشـتࢪاك في قنـا�
 end
 return false
 end
-Namebot = (database:get(bot_id.."Helen:Name:Bot") or "بلاك")
+Namebot = (database:get(bot_id.."Helen:Name:Bot") or "هيلين")
 local namebot = {
 "عمري فداك "..Namebot.. " كول حب ",
 "كول حبيبي ؟ اني "..Namebot,
@@ -6606,7 +6606,7 @@ return false
 end
 
 if text == "بوت" then
-Namebot = (database:get(bot_id.."Helen:Name:Bot") or "بلاك")
+Namebot = (database:get(bot_id.."Helen:Name:Bot") or "هيلين")
 send(msg.chat_id_, msg.id_,"اسمي القميل ["..Namebot.."] ") 
 end
 if text == "تغير اسم البوت" or text == "تغيير اسم البوت" or text == "حذف اسم البوت" then 
@@ -8141,6 +8141,26 @@ https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. 
 end
 end
 end
+if text == "شنو رئيك بهذا" or text == "شنو رئيك بهذ" then
+local texting = {"ادب سسز يباوع علي بنات ??🥺"," مو خوش ولد 😶","زاحف وما احبه 😾😹"}
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+if text == "شنو رئيك بهاي" or text == "شنو رئيك بهايي" then
+local texting = {"دور حلوين 🤕😹","جكمه وصخه عوفها ☹️😾","حقيره ومنتكبره 😶😂"}
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+if text == "هينه" or text == "رزله" then
+local texting = {"ولك هيو لتندك بسيادك لو بهاي 👞👈","ميستاهل اتعبي روحي ويا لانه عار","عوفه يروحي هاذا طيز يضل يمضرط🤣"}
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+if text == "مصه" or text == "بوسه" then
+local texting = {"مووووووووواححح????","مابوس ولي😌😹","خدك/ج نضيف 😂","البوسه بالف حمبي 🌝💋","خلي يزحفلي وابوسه 🙊😻","كل شويه ابوسه كافي 😏","ماابوسه والله هذا زاحف🦎","محح هاي لحاته صاكه??"}
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+if text == "كت تويت" or text == "كت اتويت" then
+local texting = {  "آخر مرة زرت مدينة الملاهي؟",  "آخر مرة أكلت أكلتك المفضّلة؟",  "الوضع الحالي؟\n‏1. سهران\n‏2. ضايج\n‏3. أتأمل",  "آخر شيء ضاع منك؟","كلمة أخيرة لشاغل البال؟","طريقتك المعتادة في التخلّص من الطاقة السلبية؟","شهر من أشهر العام له ذكرى جميلة معك؟","كلمة غريبة من لهجتك ومعناها؟🤓","‏- شيء سمعته عالق في ذهنك هاليومين؟","متى تكره الشخص الذي أمامك حتى لو كنت مِن أشد معجبينه؟","‏- أبرز صفة حسنة في صديقك المقرب؟","هل تشعر أن هنالك مَن يُحبك؟","اذا اكتشفت أن أعز أصدقائك يضمر لك السوء، موقفك الصريح؟","أجمل شيء حصل معك خلال هاليوم؟","صِف شعورك وأنت تُحب شخص يُحب غيرك؟👀💔","كلمة لشخص غالي اشتقت إليه؟💕","آخر خبر سعيد، متى وصلك؟","أنا آسف على ....؟","أوصف نفسك بكلمة؟","صريح، مشتاق؟","‏- صريح، هل سبق وخذلت أحدهم ولو عن غير قصد؟","‏- ماذا ستختار من الكلمات لتعبر لنا عن حياتك التي عشتها الى الآن؟💭","‏- فنان/ة تود لو يدعوكَ على مائدة عشاء؟😁❤","‏- تخيّل شيء قد يحدث في المستقبل؟","‏- للشباب | آخر مرة وصلك غزل من فتاة؟🌚","شخص أو صاحب عوضك ونساك مُر الحياة ما اسمه ؟","| اذا شفت حد واعجبك وعندك الجرأه انك تروح وتتعرف عليه ، مقدمة الحديث شو راح تكون ؟.", }  
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
 if text == "غنيلي" then
 data,res = https.request('https://black-source.tk/BlackTeAM/audios.php')
 if res == 200 then
@@ -8149,7 +8169,7 @@ if audios.Info == true then
 local Text ='𖣏︙تم اختيار المقطع الصوتي لك'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '- Helen TeAM .',url="t.me/KS_KK"}},
+{{text = '- Helen TeAM .',url="t.me/KS_KK"}},{{text = '- هيلين .',url="t.me/SR_JO"}}
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -8361,7 +8381,7 @@ if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n𖣏︙اهلا بك في متجر ملفات بلاك\n𖣏︙يوجد في المتجر ملف الردود\n𖣏︙يتم ادراج الملفات في التحديثات القادمه \n — — — — — — — — — \n"
+local TextS = "\n𖣏︙اهلا بك في متجر ملفات هيلين\n𖣏︙يوجد في المتجر ملف الردود\n𖣏︙يتم ادراج الملفات في التحديثات القادمه \n — — — — — — — — — \n"
 local TextE = "\n — — — — — — — — — \n𖣏︙تدل علامة (✔) الملف مفعل\n".."𖣏︙تدل علامة (✖) الملف معطل\n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
@@ -9818,7 +9838,7 @@ if NewCmmd then
 data.message_.content_.text_ = (NewCmmd or data.message_.content_.text_)
 end
 end
-local Name_Bot = (database:get(bot_id.."Helen:Name:Bot") or "بلاك")
+local Name_Bot = (database:get(bot_id.."Helen:Name:Bot") or "هيلين")
 if not database:get(bot_id.."Helen:Fun_Bots"..msg.chat_id_) then
 if text ==  ""..Name_Bot..' شنو رئيك بهاذا' and tonumber(msg.reply_to_message_id_) > 0 then     
 function FunBot(extra, result, success) 
