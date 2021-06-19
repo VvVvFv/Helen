@@ -8304,11 +8304,11 @@ local texting = {  "آخر مرة زرت مدينة الملاهي؟",  "آخر 
         "هل انت شخص مادي.؟"}  
 send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
 end
-if text == "تفعيل الرسائل اليوميه" and BasicBasicConstructor(msg) then
+if text == "تفعيل الرسائل اليوميه" and BasicConstructor(msg) then
 send(msg.chat_id_, msg.id_, '*𖣏︙تم تفعيل الرسائل اليوميه*')
 database:set(bot_id.."msg:match:"..msg.chat_id_,true)
 end
-if text == "تعطيل الرسائل اليوميه" and BasicBasicConstructor(msg) then
+if text == "تعطيل الرسائل اليوميه" and BasicConstructor(msg) then
 send(msg.chat_id_, msg.id_,'*𖣏︙تم تعطيل الرسائل اليوميه*')
 database:del(bot_id.." msg:match:"..msg.chat_id_)
 end
