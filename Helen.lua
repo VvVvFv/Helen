@@ -626,7 +626,7 @@ end
 function add_file(msg,chat,ID_FILE,File_Name)
 if File_Name:match('.json') then
 if tonumber(File_Name:match('(%d+)')) ~= tonumber(bot_id) then 
-sendText(chat,msg.id_,"𖣏︙ملف النسخه الاحتياطيه ليس لهاذا البوت")   
+sendText(chat,msg.id_,"𖣏︙ملف النسخه الاحتياطيه ليس لهذا البوت")   
 return false 
 end      
 local File = json:decode(https.request('https://api.telegram.org/bot' .. token .. '/getfile?file_id='..ID_FILE) ) 
@@ -1300,7 +1300,6 @@ send(msg.chat_id_, msg.id_,"𖣏︙تمت الاذاعه الى *~ "..#list.." ~
 database:del(bot_id.."Helen:Helen:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
 end
-
 
 if database:get(bot_id.."Helen:Helen:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 if text == "الغاء" or text == "الغاء 𖣏" then   
@@ -2403,13 +2402,13 @@ local username = text:match("^اضف مطور ثانوي @(.*)$")
 function Function_Helen(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 database:sadd(bot_id.."DEV:Sudo:T", result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم ترقيته مطور ثانوي في البوت")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -2436,7 +2435,7 @@ if result.id_ then
 database:srem(bot_id.."DEV:Sudo:T", result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم تنزيله من المطور ثانويين")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -2773,7 +2772,7 @@ local username = text:match("^حظر عام @(.*)$")
 function Function_Helen(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 if result.id_ == tonumber(1100752370) then
@@ -2791,7 +2790,7 @@ end
 database:sadd(bot_id.."Helen:GBan:User", result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم حظره عام من المجموعات")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -2834,7 +2833,7 @@ if result.id_ then
 Reply_Status(msg,result.id_,"reply","𖣏︙تم الغاء حظره عام من المجموعات")  
 database:srem(bot_id.."Helen:GBan:User", result.id_)
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -2860,13 +2859,13 @@ local username = text:match("^اضف مطور @(.*)$")
 function Function_Helen(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 database:sadd(bot_id.."Helen:Sudo:User", result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم ترقيته مطور في البوت")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -2893,7 +2892,7 @@ if result.id_ then
 database:srem(bot_id.."Helen:Sudo:User", result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم تنزيله من المطورين")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -2947,13 +2946,13 @@ local username = text:match("^رفع مالك @(.*)$")
 function Function_Helen(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 database:sadd(bot_id.."creator"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم ترقيته مالك")  
 else
-send(msg.chat_id_, msg.id_,"*𖣏︙لا يوجد حساب بهاذا المعرف*")
+send(msg.chat_id_, msg.id_,"*𖣏︙لا يوجد حساب بهذا المعرف*")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -2980,7 +2979,7 @@ if result.id_ then
 database:srem(bot_id.."creator"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم تنزيله من المالكين")  
 else
-send(msg.chat_id_, msg.id_,"*𖣏︙لا يوجد حساب بهاذا المعرف*")
+send(msg.chat_id_, msg.id_,"*𖣏︙لا يوجد حساب بهذا المعرف*")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3023,13 +3022,13 @@ local username = text:match("^رفع منشئ اساسي @(.*)$")
 function Function_Helen(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 database:sadd(bot_id.."Helen:Basic:Constructor"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","??︙تم ترقيته منشئ اساسي")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3084,7 +3083,7 @@ database:srem(bot_id.."Helen:Basic:Constructor"..msg.chat_id_, result.id_)
 
 Reply_Status(msg,result.id_,"reply","𖣏︙تم تنزيله من المنشئين")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3135,13 +3134,13 @@ local username = text:match("^رفع منشئ @(.*)$")
 function Function_Helen(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 database:sadd(bot_id.."Helen:Constructor"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم ترقيته منشئ في المجموعه")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3185,7 +3184,7 @@ if result.id_ then
 database:srem(bot_id.."Helen:Constructor"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم تنزيله من المنشئين")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3237,13 +3236,13 @@ local username = text:match("^رفع مدير @(.*)$")
 function Function_Helen(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 database:sadd(bot_id.."Helen:Manager"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم ترقيته مدير المجموعه")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3298,7 +3297,7 @@ if result.id_ then
 database:srem(bot_id.."Helen:Manager"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم تنزيله من المدراء")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3359,13 +3358,13 @@ end
 function Function_Helen(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 database:sadd(bot_id.."Helen:Mod:User"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم ترقيته ادمن للمجموعه")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3423,7 +3422,7 @@ if result.id_ then
 database:srem(bot_id.."Helen:Mod:User"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم تنزيله من ادمنيه المجموعه")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3484,13 +3483,13 @@ end
 function Function_Helen(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 database:sadd(bot_id.."Helen:Special:User"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم ترقيته مميز للمجموعه")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3550,7 +3549,7 @@ if result.id_ then
 database:srem(bot_id.."Helen:Special:User"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم تنزيله من المميزين")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3774,7 +3773,7 @@ heen = {
 ,"- كرامتك صارت بزبل פَــبي ."
 ,"- مو صوجك صوج الكواد الزمك جهاز ."
 ,"- لفارغ استجن . "
-,"- ڪِݪك واحد لوكي كس ."
+,"- دي مطي ."
 ,"- ملطلط دي ."
 };
 sendheen = heen[math.random(#heen)]
@@ -3819,7 +3818,7 @@ send(msg.chat_id_, msg.id_, "\n𖣏︙عذرا لا تستطيع طرد او ح�
 else
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = result.id_, status_ = { ID = "ChatMemberStatusKicked" },},function(arg,data) 
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 if (data and data.code_ and data.code_ == 400 and data.message_ == "CHAT_ADMIN_REQUIRED") then 
@@ -3836,7 +3835,7 @@ Reply_Status(msg,result.id_,"reply","𖣏︙تم حظره من المجموعه"
 end,nil)   
 end
 else
-send(msg.chat_id_, msg.id_, "𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_, "𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3933,7 +3932,7 @@ database:srem(bot_id.."Helen:Ban:User"..msg.chat_id_, result.id_)
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = result.id_, status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)   
 Reply_Status(msg,result.id_,"reply","𖣏︙تم الغاء حظره من هنا")  
 else
-send(msg.chat_id_, msg.id_, "𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_, "𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -4024,13 +4023,13 @@ send(msg.chat_id_, msg.id_, "\n𖣏︙عذرا لا تستطيع طرد او ح�
 return false 
 end     
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 database:sadd(bot_id.."Helen:Muted:User"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم كتمه من هنا")  
 else
-send(msg.chat_id_, msg.id_, "𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_, "𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -4087,7 +4086,7 @@ if result.id_ then
 database:srem(bot_id.."Helen:Muted:User"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم الغاء كتمه من هنا")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -4179,7 +4178,7 @@ local username = text:match("^تقيد @(.*)$")
 function Function_Helen(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 if Rank_Checking(result.id_, msg.chat_id_) then
@@ -4189,7 +4188,7 @@ end
 https.request("https://api.telegram.org/bot"..token.."/restrictChatMember?chat_id="..msg.chat_id_.."&user_id="..result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم تقييده في المجموعه")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -4250,7 +4249,7 @@ if result.id_ then
 https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. result.id_ .. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
 Reply_Status(msg,result.id_,"reply","𖣏︙تم الغاء تقييده")  
 else
-send(msg.chat_id_, msg.id_, "𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_, "𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -4329,7 +4328,7 @@ send(msg.chat_id_, msg.id_, "\n𖣏︙عذرا لا تستطيع طرد او ح�
 else
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = result.id_, status_ = { ID = "ChatMemberStatusKicked" },},function(arg,data) 
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 if (data and data.code_ and data.code_ == 400 and data.message_ == "CHAT_ADMIN_REQUIRED") then 
@@ -4345,7 +4344,7 @@ Reply_Status(msg,result.id_,"reply","𖣏︙تم طرده من هنا")
 end,nil)   
 end
 else
-send(msg.chat_id_, msg.id_, "𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_, "𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -5273,13 +5272,13 @@ local username = text:match("^رفع منظف @(.*)$")
 function Function_Helen(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 database:sadd(bot_id.."Helen:MN:TF"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم ترقيته منظف للمجموعه")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -5337,7 +5336,7 @@ if result.id_ then
 database:srem(bot_id.."Helen:MN:TF"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم تنزيله من منظفيه المجموعه")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -7295,7 +7294,7 @@ local Add_Mem = database:get(bot_id.."Helen:Add:Memp"..msg.chat_id_..":"..data.i
 send(msg.chat_id_, msg.id_,'*𖣏︙ايديه - '..Id..'\n𖣏︙رسائله - '..NumMsg..'\n𖣏︙معرفه - *['..UserName_User..']*\n𖣏︙تفاعله - '..TotalMsg..'\n𖣏︙رتبته - '..Status_Gps..'\n𖣏︙تعديلاته - '..message_edit..'\n𖣏︙جهاته - '..Add_Mem..'\n𖣏︙نوع الكشف - بالمعرف \n*') 
 end,nil)   
 else
-send(msg.chat_id_, msg.id_,'𖣏︙لا يوجد حساب بهاذا المعرف')
+send(msg.chat_id_, msg.id_,'𖣏︙لا يوجد حساب بهذا المعرف')
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -7316,7 +7315,7 @@ database:del(bot_id.."Tshak:Set:Sma"..msg.chat_id_)
 Random = {"🍏","🍎","🍐","🍊","🍋","🍉","🍇","🍓","🍈","🍒","🍑","🍍","🥥","🥝","🍅","🍆","🥑","🥦","🥒","🌶","🌽","🥕","🥔","🥖","??","🍞","🥨","🍟","🧀","🥚","🍳","🥓","🥩","🍗","🍖","🌭","🍔","🍠","🍕","🥪","🥙","☕️","🍵","🥤","🍶","🍺","🍻","🏀","⚽️","🏈","⚾️","🎾","🏐","🏉","🎱","🏓","🏸","🥅","🎰","🎮","🎳","🎯","🎲","🎻","🎸","🎺","🥁","🎹","🎼","🎧","🎤","🎬","🎨","🎭","🎪","🎟","𖣏","🎗","🏵","𖣏","🏆","🥌","🛷","🚗","🚌","🏎","🚓","🚑","🚚","🚛","🚜","🇮🇶","⚔","🛡","🔮","🌡","💣","𖣏","📍","📓","📗","𖣏","📅","📪","𖣏","𖣏","📭","⏰","📺","🎚","☎️","𖣏"}
 SM = Random[math.random(#Random)]
 database:set(bot_id.."Tshak:Random:Sm"..msg.chat_id_,SM)
-send(msg.chat_id_, msg.id_,"𖣏︙اسرع واحد يدز هاذا السمايل ? ~ {`"..SM.."`}")
+send(msg.chat_id_, msg.id_,"𖣏︙اسرع واحد يدز هذا السمايل ? ~ {`"..SM.."`}")
 return false
 end
 end
@@ -7857,7 +7856,7 @@ send(msg.chat_id_,msg.id_,"𖣏︙ليس لديك جواهر من الالعاب
 else
 local NUM_GAMES = database:get(bot_id.."Tshak:Add:Num"..msg.chat_id_..msg.sender_user_id_)
 if tonumber(NUMPY) > tonumber(NUM_GAMES) then
-send(msg.chat_id_,msg.id_,"\n𖣏︙ليس لديك جواهر بهاذا العدد \n𖣏︙لزيادة مجوهراتك في اللعبه \n𖣏︙ارسل الالعاب وابدأ اللعب !") 
+send(msg.chat_id_,msg.id_,"\n𖣏︙ليس لديك جواهر بهذا العدد \n𖣏︙لزيادة مجوهراتك في اللعبه \n𖣏︙ارسل الالعاب وابدأ اللعب !") 
 return false 
 end
 local NUMNKO = (NUMPY * 50)
@@ -8034,36 +8033,6 @@ end,nil)
 end
 return false
 end
-if text == "معلومات السيرفر 𖣏" and DevHelen(msg) then   
-send(msg.chat_id_, msg.id_, io.popen([[
-linux_version=`lsb_release -ds`
-memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
-HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" }}'`
-CPUPer=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
-uptime=`uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes."}'`
-echo '⇗ نظام التشغيل ⇖•\n*»» '"$linux_version"'*' 
-echo '*———————————~*\n𖣏 { الذاكره العشوائيه } ⇎\n*»» '"$memUsedPrc"'*'
-echo '*———————————~*\n𖣏 { وحـده الـتـخـزيـن } ⇎\n*»» '"$HardDisk"'*'
-echo '*———————————~*\n𖣏 { الـمــعــالــج } ⇎\n*»» '"`grep -c processor /proc/cpuinfo`""Core ~ {$CPUPer%} "'*'
-echo '*———————————~*\n𖣏 { الــدخــول } ⇎\n*»» '`whoami`'*'
-echo '*———————————~*\n𖣏 { مـده تـشغيـل الـسـيـرفـر }⇎\n*»» '"$uptime"'*'
-]]):read('*all'))  
-end
-if text == "السيرفر" and DevHelen(msg) then   
-send(msg.chat_id_, msg.id_, io.popen([[
-linux_version=`lsb_release -ds`
-memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
-HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" }}'`
-CPUPer=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
-uptime=`uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes."}'`
-echo '⇗ نظام التشغيل ⇖•\n*»» '"$linux_version"'*' 
-echo '*———————————~*\n𖣏 { الذاكره العشوائيه } ⇎\n*»» '"$memUsedPrc"'*'
-echo '*———————————~*\n𖣏 { وحـده الـتـخـزيـن } ⇎\n*»» '"$HardDisk"'*'
-echo '*———————————~*\n𖣏 { الـمــعــالــج } ⇎\n*»» '"`grep -c processor /proc/cpuinfo`""Core ~ {$CPUPer%} "'*'
-echo '*———————————~*\n𖣏 { الــدخــول } ⇎\n*»» '`whoami`'*'
-echo '*———————————~*\n𖣏 { مـده تـشغيـل الـسـيـرفـر }⇎\n*»» '"$uptime"'*'
-]]):read('*all'))  
-end
 if text == ("تحديث السورس") and DevHelen(msg) then  
 send(msg.chat_id_,msg.id_,'𖣏︙تم التحديث')
 os.execute('rm -rf Helen.lua')
@@ -8172,23 +8141,23 @@ https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. 
 end
 end
 end
-if text == "شنو رئيك بهذا" or text == "شنو رئيك بهذ" then
-local texting = {"ادب سسز يباوع علي بنات ??🥺"," مو خوش ولد 😶","زاحف وما احبه 😾😹"}
+if text == "شنو رأيك بهذا" or text == "شنو رأيك بهذ" then
+local texting = {"ادب سسز يباوع علي بنات ????"," مو خوش ولد 😶","زاحف وما احبه 😾😹"}
 send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
 end
-if text == "شنو رئيك بهاي" or text == "شنو رئيك بهايي" then
+if text == "شنو رأيك بهاي" or text == "شنو رأيك بهايي" then
 local texting = {"دور حلوين 🤕😹","جكمه وصخه عوفها ☹️😾","حقيره ومنتكبره 😶😂"}
 send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
 end
 if text == "هينه" or text == "رزله" then
-local texting = {"ولك هيو لتندك بسيادك لو بهاي 👞👈","ميستاهل اتعبي روحي ويا لانه عار","عوفه يروحي هاذا طيز يضل يمضرط🤣"}
+local texting = {"ولك هيو لتندك بسيادك لو بهاي 👞👈","ميستاهل اتعبي روحي ويا لانه عار","عوفه يروحي هذا طيز يضل يمضرط🤣"}
 send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
 end
 if text == "مصه" or text == "بوسه" then
 local texting = {"مووووووووواححح????","مابوس ولي😌😹","خدك/ج نضيف 😂","البوسه بالف حمبي 🌝💋","خلي يزحفلي وابوسه 🙊😻","كل شويه ابوسه كافي 😏","ماابوسه والله هذا زاحف🦎","محح هاي لحاته صاكه??"}
 send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
 end
-if text == "كت تويت" or text == "كت اتويت" then
+if text == "كت تويت" or text == "كت" then
 local texting = {  "آخر مرة زرت مدينة الملاهي؟",  "آخر مرة أكلت أكلتك المفضّلة؟",  "الوضع الحالي؟\n‏1. سهران\n‏2. ضايج\n‏3. أتأمل",  "آخر شيء ضاع منك؟","كلمة أخيرة لشاغل البال؟","طريقتك المعتادة في التخلّص من الطاقة السلبية؟","شهر من أشهر العام له ذكرى جميلة معك؟","كلمة غريبة من لهجتك ومعناها؟🤓","‏- شيء سمعته عالق في ذهنك هاليومين؟","متى تكره الشخص الذي أمامك حتى لو كنت مِن أشد معجبينه؟","‏- أبرز صفة حسنة في صديقك المقرب؟","هل تشعر أن هنالك مَن يُحبك؟","اذا اكتشفت أن أعز أصدقائك يضمر لك السوء، موقفك الصريح؟","أجمل شيء حصل معك خلال هاليوم؟","صِف شعورك وأنت تُحب شخص يُحب غيرك؟👀💔","كلمة لشخص غالي اشتقت إليه؟💕","آخر خبر سعيد، متى وصلك؟","أنا آسف على ....؟","أوصف نفسك بكلمة؟","صريح، مشتاق؟","‏- صريح، هل سبق وخذلت أحدهم ولو عن غير قصد؟","‏- ماذا ستختار من الكلمات لتعبر لنا عن حياتك التي عشتها الى الآن؟💭","‏- فنان/ة تود لو يدعوكَ على مائدة عشاء؟😁❤","‏- تخيّل شيء قد يحدث في المستقبل؟","‏- للشباب | آخر مرة وصلك غزل من فتاة؟🌚","شخص أو صاحب عوضك ونساك مُر الحياة ما اسمه ؟","| اذا شفت حد واعجبك وعندك الجرأه انك تروح وتتعرف عليه ، مقدمة الحديث شو راح تكون ؟.","تتابع انمي؟ إذا نعم ما أفضل انمي شاهدته",
         "صوتك حلو ؟ .",
         "دولة تحبها ومنشن شخص تتمنئ يرافقك.؟",
@@ -9225,7 +9194,6 @@ local keyboard = {
 {'- تفعيل الاشتراك الاجباري 𖣏 .','- تعطيل الاشتراك الاجباري 𖣏 .'},
 {'تنظيف الكروبات 𖣏','تنظيف المشتركين 𖣏'},
 {'اذاعه بالتوجيه 𖣏','اذاعه بالتوجيه خاص 𖣏'},
-{'معلومات السيرفر 𖣏'},
 {'- تغير رساله الاشتراك 𖣏 .','حذف رساله الاشتراك 𖣏 .'},
 {'- تعين قناة الاشتراك 𖣏 .','- تغير الاشتراك 𖣏 .'},
 {'- الاشتراك الاجباري 𖣏 .'},
@@ -10035,7 +10003,7 @@ database:del(bot_id.."Helen:Set:Cmd:Group:New"..msg.chat_id_)
 database:srem(bot_id.."Helen:List:Cmd:Group:New"..msg.chat_id_,text)
 send(msg.chat_id_, msg.id_,"𖣏︙تم ازالة الامر من المجموعه")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد امر بهاذا الاسم تاكد من الامر واعد المحاوله")  
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد امر بهذا الاسم تاكد من الامر واعد المحاوله")  
 end
 database:del(bot_id.."Helen:Del:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_)
 return false
@@ -10049,7 +10017,7 @@ end
 end
 local Name_Bot = (database:get(bot_id.."Helen:Name:Bot") or "هيلين")
 if not database:get(bot_id.."Helen:Fun_Bots"..msg.chat_id_) then
-if text ==  ""..Name_Bot..' شنو رئيك بهاذا' and tonumber(msg.reply_to_message_id_) > 0 then     
+if text ==  ""..Name_Bot..' شنو رأيك بهذا' and tonumber(msg.reply_to_message_id_) > 0 then     
 function FunBot(extra, result, success) 
 local Fun = {'لوكي وزاحف من ساع زحفلي وحضرته 😒','خوش ولد و ورده مال الله 🙄','يلعب ع البنات 🙄', 'ولد زايعته الكاع 😶🙊','صاك يخبل ومعضل ','محلو وشواربه جنها مكناسه 😂🤷🏼‍♀️','اموت عليه 🌝','هوه غير الحب مال اني ❤️','مو خوش ولد صراحه ☹️','ادبسز وميحترم البنات  ', 'فد واحد قذر 🙄😒','ماطيقه كل ما اكمشه ريحته جنها بخاخ بف باف مال حشرات 😂🤷‍♀️','مو خوش ولد 🤓' } 
 send(msg.chat_id_, result.id_,''..Fun[math.random(#Fun)]..'')   
@@ -10057,7 +10025,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunBot, nil)
 return false
 end  
-if text == ""..Name_Bot..' شنو رئيك بهاي' and tonumber(msg.reply_to_message_id_) > 0 then    
+if text == ""..Name_Bot..' شنو رأيك بهاي' and tonumber(msg.reply_to_message_id_) > 0 then    
 function FunBot(extra, result, success) 
 local Fun = {'الكبد مال اني هيه ','ختولي ماحبها ','خانتني ويه صديقي 😔','بس لو الكفها اله اعضها 💔','خوش بنيه بس عده مكسرات زايده وناقصه منا ومنا وهيه تدري بنفسها 😒','جذابه ومنافقه سوتلي مشكله ويه الحب مالتي ','ئووووووووف اموت ع ربها ','ديرو بالكم منها تلعب ع الولد 😶 ضحكت ع واحد قطته ايفون 7 ','صديقتي وختي وروحي وحياتي ','فد وحده منحرفه 😥','ساكنه بالعلاوي ونته حدد بعد لسانها لسان دلاله 🙄🤐','ام سحوره سحرت اخويا وعلكته 6 سنوات 🤕','ماحبها 🙁','بله هاي جهره تسئل عليها ؟ ','بربك ئنته والله فارغ وبطران وماعدك شي تسوي جاي تسئل ع بنات العالم ولي يله 🏼','ياخي بنيه حبوبه بس لبعرك معمي عليها تشرب هواي 😹' } 
 send(msg.chat_id_,result.id_,''..Fun[math.random(#Fun)]..'') 
