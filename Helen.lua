@@ -8034,7 +8034,22 @@ end,nil)
 end
 return false
 end
-if text == "معلومات السيرفر 𖣏" and DevHelen(msg) or text == "السيرفر" and DevHelen(msg) then   
+if text == "معلومات السيرفر 𖣏" and DevHelen(msg) then   
+send(msg.chat_id_, msg.id_, io.popen([[
+linux_version=`lsb_release -ds`
+memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
+HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" }}'`
+CPUPer=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
+uptime=`uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes."}'`
+echo '⇗ نظام التشغيل ⇖•\n*»» '"$linux_version"'*' 
+echo '*———————————~*\n𖣏 { الذاكره العشوائيه } ⇎\n*»» '"$memUsedPrc"'*'
+echo '*———————————~*\n𖣏 { وحـده الـتـخـزيـن } ⇎\n*»» '"$HardDisk"'*'
+echo '*———————————~*\n𖣏 { الـمــعــالــج } ⇎\n*»» '"`grep -c processor /proc/cpuinfo`""Core ~ {$CPUPer%} "'*'
+echo '*———————————~*\n𖣏 { الــدخــول } ⇎\n*»» '`whoami`'*'
+echo '*———————————~*\n𖣏 { مـده تـشغيـل الـسـيـرفـر }⇎\n*»» '"$uptime"'*'
+]]):read('*all'))  
+end
+if text == "السيرفر" and DevHelen(msg) then   
 send(msg.chat_id_, msg.id_, io.popen([[
 linux_version=`lsb_release -ds`
 memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
