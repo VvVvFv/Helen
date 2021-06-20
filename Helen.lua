@@ -516,9 +516,9 @@ end
 function Reply_Status(msg,user_id,status,text)
 tdcli_function ({ID = "GetUser",user_id_ = user_id},function(arg,data) 
 if data.first_name_ ~= false then
-local UserName = (data.username_ or "KS_KK")
-local NameUser = "[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/KS_KK)\n — — — — — — — — —\n𖣏︙بواسطه -› ["..data.first_name_.."](T.me/"..UserName..")"
-local NameUserr = "[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/KS_KK)\n — — — — — — — — —\n𖣏︙اسم المستخدم -› ["..data.first_name_.."](T.me/"..UserName..")"
+local UserName = (data.username_ or "Ks_KK")
+local NameUser = "[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/Ks_KK)\n — — — — — — — — —\n𖣏︙بواسطه -› ["..data.first_name_.."](T.me/"..UserName..")"
+local NameUserr = "[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/Ks_KK)\n — — — — — — — — —\n𖣏︙اسم المستخدم -› ["..data.first_name_.."](T.me/"..UserName..")"
 if status == "lock" then
 send(msg.chat_id_, msg.id_,NameUser.."\n"..text.."\n— — — — — — — — —\n𖣏︙تم تنفيذ الامر بخاصيه ( المسح )\n")
 return false
@@ -626,7 +626,7 @@ end
 function add_file(msg,chat,ID_FILE,File_Name)
 if File_Name:match('.json') then
 if tonumber(File_Name:match('(%d+)')) ~= tonumber(bot_id) then 
-sendText(chat,msg.id_,"𖣏︙ملف النسخه الاحتياطيه ليس لهذا البوت")   
+sendText(chat,msg.id_,"𖣏︙ملف النسخه الاحتياطيه ليس لهاذا البوت")   
 return false 
 end      
 local File = json:decode(https.request('https://api.telegram.org/bot' .. token .. '/getfile?file_id='..ID_FILE) ) 
@@ -2402,13 +2402,13 @@ local username = text:match("^اضف مطور ثانوي @(.*)$")
 function Function_Helen(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 database:sadd(bot_id.."DEV:Sudo:T", result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم ترقيته مطور ثانوي في البوت")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -2435,7 +2435,7 @@ if result.id_ then
 database:srem(bot_id.."DEV:Sudo:T", result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم تنزيله من المطور ثانويين")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -2772,7 +2772,7 @@ local username = text:match("^حظر عام @(.*)$")
 function Function_Helen(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 if result.id_ == tonumber(1100752370) then
@@ -2790,7 +2790,7 @@ end
 database:sadd(bot_id.."Helen:GBan:User", result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم حظره عام من المجموعات")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -2833,7 +2833,7 @@ if result.id_ then
 Reply_Status(msg,result.id_,"reply","𖣏︙تم الغاء حظره عام من المجموعات")  
 database:srem(bot_id.."Helen:GBan:User", result.id_)
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -2859,13 +2859,13 @@ local username = text:match("^اضف مطور @(.*)$")
 function Function_Helen(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 database:sadd(bot_id.."Helen:Sudo:User", result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم ترقيته مطور في البوت")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -2892,7 +2892,7 @@ if result.id_ then
 database:srem(bot_id.."Helen:Sudo:User", result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم تنزيله من المطورين")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -2946,13 +2946,13 @@ local username = text:match("^رفع مالك @(.*)$")
 function Function_Helen(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 database:sadd(bot_id.."creator"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم ترقيته مالك")  
 else
-send(msg.chat_id_, msg.id_,"*𖣏︙لا يوجد حساب بهذا المعرف*")
+send(msg.chat_id_, msg.id_,"*𖣏︙لا يوجد حساب بهاذا المعرف*")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -2979,7 +2979,7 @@ if result.id_ then
 database:srem(bot_id.."creator"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم تنزيله من المالكين")  
 else
-send(msg.chat_id_, msg.id_,"*𖣏︙لا يوجد حساب بهذا المعرف*")
+send(msg.chat_id_, msg.id_,"*𖣏︙لا يوجد حساب بهاذا المعرف*")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3022,13 +3022,13 @@ local username = text:match("^رفع منشئ اساسي @(.*)$")
 function Function_Helen(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 database:sadd(bot_id.."Helen:Basic:Constructor"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","??︙تم ترقيته منشئ اساسي")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3083,7 +3083,7 @@ database:srem(bot_id.."Helen:Basic:Constructor"..msg.chat_id_, result.id_)
 
 Reply_Status(msg,result.id_,"reply","𖣏︙تم تنزيله من المنشئين")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3134,13 +3134,13 @@ local username = text:match("^رفع منشئ @(.*)$")
 function Function_Helen(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 database:sadd(bot_id.."Helen:Constructor"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم ترقيته منشئ في المجموعه")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3184,7 +3184,7 @@ if result.id_ then
 database:srem(bot_id.."Helen:Constructor"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم تنزيله من المنشئين")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3236,13 +3236,13 @@ local username = text:match("^رفع مدير @(.*)$")
 function Function_Helen(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 database:sadd(bot_id.."Helen:Manager"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم ترقيته مدير المجموعه")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3297,7 +3297,7 @@ if result.id_ then
 database:srem(bot_id.."Helen:Manager"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم تنزيله من المدراء")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3358,13 +3358,13 @@ end
 function Function_Helen(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 database:sadd(bot_id.."Helen:Mod:User"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم ترقيته ادمن للمجموعه")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3422,7 +3422,7 @@ if result.id_ then
 database:srem(bot_id.."Helen:Mod:User"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم تنزيله من ادمنيه المجموعه")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3483,13 +3483,13 @@ end
 function Function_Helen(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 database:sadd(bot_id.."Helen:Special:User"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم ترقيته مميز للمجموعه")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3549,7 +3549,7 @@ if result.id_ then
 database:srem(bot_id.."Helen:Special:User"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم تنزيله من المميزين")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3586,19 +3586,19 @@ function by_reply(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 local Helenrt = database:get(bot_id.."Helen:Comd:New:rt:bot:"..RTPA..msg.chat_id_)
 if Helenrt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/KS_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "KS_KK")..")".."\n𖣏︙تم رفعه "..RTPA.." هنا\n")
+send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/Ks_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "Ks_KK")..")".."\n𖣏︙تم رفعه "..RTPA.." هنا\n")
 database:set(bot_id.."Helen:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA) 
 database:sadd(bot_id.."Helen:Special:User"..msg.chat_id_,result.sender_user_id_)  
 elseif Helenrt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/KS_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "KS_KK")..")".."\n𖣏︙تم رفعه "..RTPA.." هنا\n")
+send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/Ks_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "Ks_KK")..")".."\n𖣏︙تم رفعه "..RTPA.." هنا\n")
 database:set(bot_id.."Helen:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA)
 database:sadd(bot_id.."Helen:Mod:User"..msg.chat_id_,result.sender_user_id_)  
 elseif Helenrt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/KS_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "KS_KK")..")".."\n𖣏︙تم رفعه "..RTPA.." هنا\n")
+send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/Ks_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "Ks_KK")..")".."\n𖣏︙تم رفعه "..RTPA.." هنا\n")
 database:set(bot_id.."Helen:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA)  
 database:sadd(bot_id.."Helen:Manager"..msg.chat_id_,result.sender_user_id_)  
 elseif Helenrt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/KS_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "KS_KK")..")".."\n𖣏︙تم رفعه "..RTPA.." هنا\n")
+send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/Ks_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "Ks_KK")..")".."\n𖣏︙تم رفعه "..RTPA.." هنا\n")
 end
 end,nil)   
 end   
@@ -3621,19 +3621,19 @@ function by_reply(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 local Helenrt = database:get(bot_id.."Helen:Comd:New:rt:bot:"..RTPA..msg.chat_id_)
 if Helenrt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/KS_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "KS_KK")..")".."\n𖣏︙تم تنزيله من "..RTPA.." هنا\n")  
+send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/Ks_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "Ks_KK")..")".."\n𖣏︙تم تنزيله من "..RTPA.." هنا\n")  
 database:srem(bot_id.."Helen:Special:User"..msg.chat_id_,result.sender_user_id_)  
 database:del(bot_id.."Helen:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif Helenrt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/KS_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "KS_KK")..")".."\n𖣏︙تم تنزيله من "..RTPA.." هنا\n")  
+send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/Ks_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "Ks_KK")..")".."\n𖣏︙تم تنزيله من "..RTPA.." هنا\n")  
 database:srem(bot_id.."Helen:Mod:User"..msg.chat_id_,result.sender_user_id_) 
 database:del(bot_id.."Helen:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif Helenrt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/KS_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "KS_KK")..")".."\n𖣏︙تم تنزيله من "..RTPA.." هنا\n")  
+send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/Ks_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "Ks_KK")..")".."\n𖣏︙تم تنزيله من "..RTPA.." هنا\n")  
 database:srem(bot_id.."Helen:Manager"..msg.chat_id_,result.sender_user_id_)  
 database:del(bot_id.."Helen:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif Helenrt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/KS_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "KS_KK")..")".."\n𖣏︙تم تنزيله من "..RTPA.." هنا\n")  
+send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/Ks_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..data.first_name_.."](t.me/"..(data.username_ or "Ks_KK")..")".."\n𖣏︙تم تنزيله من "..RTPA.." هنا\n")  
 end
 end,nil)   
 end   
@@ -3656,19 +3656,19 @@ function py_username(extra, result, success)
 if result.id_ then
 local Helenrt = database:get(bot_id.."Helen:Comd:New:rt:bot:"..text1[2]..msg.chat_id_)
 if Helenrt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/KS_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..result.title_.."](t.me/"..(text1[3] or "KS_KK")..")".."\n𖣏︙تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/Ks_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..result.title_.."](t.me/"..(text1[3] or "Ks_KK")..")".."\n𖣏︙تم رفعه "..text1[2].." هنا")   
 database:sadd(bot_id.."Helen:Special:User"..msg.chat_id_,result.id_)  
 database:set(bot_id.."Helen:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif Helenrt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/KS_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..result.title_.."](t.me/"..(text1[3] or "KS_KK")..")".."\n𖣏︙تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/Ks_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..result.title_.."](t.me/"..(text1[3] or "Ks_KK")..")".."\n𖣏︙تم رفعه "..text1[2].." هنا")   
 database:sadd(bot_id.."Helen:Mod:User"..msg.chat_id_,result.id_)  
 database:set(bot_id.."Helen:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif Helenrt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/KS_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..result.title_.."](t.me/"..(text1[3] or "KS_KK")..")".."\n𖣏︙تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/Ks_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..result.title_.."](t.me/"..(text1[3] or "Ks_KK")..")".."\n𖣏︙تم رفعه "..text1[2].." هنا")   
 database:sadd(bot_id.."Helen:Manager"..msg.chat_id_,result.id_)  
 database:set(bot_id.."Helen:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif Helenrt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/KS_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..result.title_.."](t.me/"..(text1[3] or "KS_KK")..")".."\n𖣏︙تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/Ks_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..result.title_.."](t.me/"..(text1[3] or "Ks_KK")..")".."\n𖣏︙تم رفعه "..text1[2].." هنا")   
 end
 else
 info = "𖣏︙المعرف غلط"
@@ -3694,19 +3694,19 @@ function py_username(extra, result, success)
 if result.id_ then
 local Helenrt = database:get(bot_id.."Helen:Comd:New:rt:bot:"..text1[2]..msg.chat_id_)
 if Helenrt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/KS_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..result.title_.."](t.me/"..(text1[3] or "KS_KK")..")".."\n𖣏︙تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/Ks_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..result.title_.."](t.me/"..(text1[3] or "Ks_KK")..")".."\n𖣏︙تم تنريله من "..text1[2].." هنا")   
 database:srem(bot_id.."Helen:Special:User"..msg.chat_id_,result.id_)  
 database:del(bot_id.."Helen:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif Helenrt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/KS_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..result.title_.."](t.me/"..(text1[3] or "KS_KK")..")".."\n𖣏︙تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/Ks_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..result.title_.."](t.me/"..(text1[3] or "Ks_KK")..")".."\n𖣏︙تم تنريله من "..text1[2].." هنا")   
 database:srem(bot_id.."Helen:Mod:User"..msg.chat_id_,result.id_)  
 database:del(bot_id.."Helen:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif Helenrt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/KS_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..result.title_.."](t.me/"..(text1[3] or "KS_KK")..")".."\n𖣏︙تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/Ks_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..result.title_.."](t.me/"..(text1[3] or "Ks_KK")..")".."\n𖣏︙تم تنريله من "..text1[2].." هنا")   
 database:srem(bot_id.."Helen:Manager"..msg.chat_id_,result.id_)  
 database:del(bot_id.."Helen:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif Helenrt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/KS_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..result.title_.."](t.me/"..(text1[3] or "KS_KK")..")".."\n𖣏︙تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[- Helen 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/Ks_KK)\n — — — — — — — — —\n𖣏︙العضو -› ["..result.title_.."](t.me/"..(text1[3] or "Ks_KK")..")".."\n𖣏︙تم تنريله من "..text1[2].." هنا")   
 end
 else
 info = "𖣏︙المعرف غلط"
@@ -3773,7 +3773,7 @@ heen = {
 ,"- كرامتك صارت بزبل פَــبي ."
 ,"- مو صوجك صوج الكواد الزمك جهاز ."
 ,"- لفارغ استجن . "
-,"- دي مطي ."
+,"- ڪِݪك واحد لوكي كس ."
 ,"- ملطلط دي ."
 };
 sendheen = heen[math.random(#heen)]
@@ -3818,7 +3818,7 @@ send(msg.chat_id_, msg.id_, "\n𖣏︙عذرا لا تستطيع طرد او ح�
 else
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = result.id_, status_ = { ID = "ChatMemberStatusKicked" },},function(arg,data) 
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 if (data and data.code_ and data.code_ == 400 and data.message_ == "CHAT_ADMIN_REQUIRED") then 
@@ -3835,7 +3835,7 @@ Reply_Status(msg,result.id_,"reply","𖣏︙تم حظره من المجموعه"
 end,nil)   
 end
 else
-send(msg.chat_id_, msg.id_, "𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_, "𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -3932,7 +3932,7 @@ database:srem(bot_id.."Helen:Ban:User"..msg.chat_id_, result.id_)
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = result.id_, status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)   
 Reply_Status(msg,result.id_,"reply","𖣏︙تم الغاء حظره من هنا")  
 else
-send(msg.chat_id_, msg.id_, "𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_, "𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -4023,13 +4023,13 @@ send(msg.chat_id_, msg.id_, "\n𖣏︙عذرا لا تستطيع طرد او ح�
 return false 
 end     
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 database:sadd(bot_id.."Helen:Muted:User"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم كتمه من هنا")  
 else
-send(msg.chat_id_, msg.id_, "𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_, "𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -4086,7 +4086,7 @@ if result.id_ then
 database:srem(bot_id.."Helen:Muted:User"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم الغاء كتمه من هنا")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -4178,7 +4178,7 @@ local username = text:match("^تقيد @(.*)$")
 function Function_Helen(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 if Rank_Checking(result.id_, msg.chat_id_) then
@@ -4188,7 +4188,7 @@ end
 https.request("https://api.telegram.org/bot"..token.."/restrictChatMember?chat_id="..msg.chat_id_.."&user_id="..result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم تقييده في المجموعه")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -4249,7 +4249,7 @@ if result.id_ then
 https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. result.id_ .. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
 Reply_Status(msg,result.id_,"reply","𖣏︙تم الغاء تقييده")  
 else
-send(msg.chat_id_, msg.id_, "𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_, "𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -4328,7 +4328,7 @@ send(msg.chat_id_, msg.id_, "\n𖣏︙عذرا لا تستطيع طرد او ح�
 else
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = result.id_, status_ = { ID = "ChatMemberStatusKicked" },},function(arg,data) 
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 if (data and data.code_ and data.code_ == 400 and data.message_ == "CHAT_ADMIN_REQUIRED") then 
@@ -4344,13 +4344,187 @@ Reply_Status(msg,result.id_,"reply","𖣏︙تم طرده من هنا")
 end,nil)   
 end
 else
-send(msg.chat_id_, msg.id_, "𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_, "𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
 return false
 end  
-
+if text == "كت تويت" or text == "كت" then
+local texting = {  "آخر مرة زرت مدينة الملاهي؟",  "آخر مرة أكلت أكلتك المفضّلة؟",  "الوضع الحالي؟\n‏1. سهران\n‏2. ضايج\n‏3. أتأمل",  "آخر شيء ضاع منك؟","كلمة أخيرة لشاغل البال؟","طريقتك المعتادة في التخلّص من الطاقة السلبية؟","شهر من أشهر العام له ذكرى جميلة معك؟","كلمة غريبة من لهجتك ومعناها؟🤓","‏- شيء سمعته عالق في ذهنك هاليومين؟","متى تكره الشخص الذي أمامك حتى لو كنت مِن أشد معجبينه؟","‏- أبرز صفة حسنة في صديقك المقرب؟","هل تشعر أن هنالك مَن يُحبك؟","اذا اكتشفت أن أعز أصدقائك يضمر لك السوء، موقفك الصريح؟","أجمل شيء حصل معك خلال هاليوم؟","صِف شعورك وأنت تُحب شخص يُحب غيرك؟👀💔","كلمة لشخص غالي اشتقت إليه؟💕","آخر خبر سعيد، متى وصلك؟","أنا آسف على ....؟","أوصف نفسك بكلمة؟","صريح، مشتاق؟","‏- صريح، هل سبق وخذلت أحدهم ولو عن غير قصد؟","‏- ماذا ستختار من الكلمات لتعبر لنا عن حياتك التي عشتها الى الآن؟💭","‏- فنان/ة تود لو يدعوكَ على مائدة عشاء؟😁❤","‏- تخيّل شيء قد يحدث في المستقبل؟","‏- للشباب | آخر مرة وصلك غزل من فتاة؟🌚","شخص أو صاحب عوضك ونساك مُر الحياة ما اسمه ؟","| اذا شفت حد واعجبك وعندك الجرأه انك تروح وتتعرف عليه ، مقدمة الحديث شو راح تكون ؟.","تتابع انمي؟ إذا نعم ما أفضل انمي شاهدته",
+        "صوتك حلو ؟ .",
+        "دولة تحبها ومنشن شخص تتمنئ يرافقك.؟",
+        "يرد عليك متأخر على رسالة مهمة وبكل برود، موقفك؟",
+        "ما أكثر تطبيق تقضي وقتك عليه؟",
+        "وش احساسك وانت ولد بحساب بنت؟.",
+        "كلمة اشتقت وش ردك عليها من شخص ماتعرفة.؟",
+        "تحس انك مستعد للقاء الله ولا باقي.؟",
+        "مع أو ضد الحب بعد الزواج.؟",
+        "‏- كُنت تمازح أحد أصدقائك ثم بكى بسبب كلمة لم تعرف بأنها تجرحه، ردة فعلك؟",
+        "منشن لشخص وقوله  أعترف لك.؟",
+        "ردة فعلك لمن يتجاهلك بالرد متعمد؟",
+        "منشن لشخص مشتاق لحضنه؟.",
+        "كيف تحد الدولة من الفقر المُتزايد.؟",
+        "كلمة لشخص أسعدك رغم حزنك في يومٍ من الأيام ؟",
+        "الزمن الجميل او عصر التكنلوجيا.؟",
+        "موقف خلاك تحس انك مكسور ؟",
+        "ما هو أفضل حافز للشخص؟",
+        "يومك ضاع على؟",
+        "لو انظلم أحد قدامك تدافع عنه ولا تطنش.؟",
+        "عادي تتزوج من برا القبيلة؟",
+        "أجمل شيء حصل معك خلال هذا الاسبوع ؟",
+        "وش رايك بصداقة البنت والولد إلكترونياً؟.",
+        "أتمنى اكون بعد عشر سنين في ........؟",
+        "كلمة لشخص بعيد؟",
+        "‏- تقبل بالعودة لشخص كسر قلبك مرتين؟",
+        "كلمة تنرفزك.؟",
+        "بماذا يتعافى المرء؟",
+        "اسواء طبع فيك؟",
+        "تخطط للمستقبل ولا ؟",
+        "تفضّل النقاش الطويل او تحب الاختصار ؟",
+        "وقفة إحترام للي إخترع ؟",
+        "كلمتين تكررها دايم؟!",
+        "تزعلك الدنيا ويرضيك ؟",
+        "القصيدة اللي تأثر فيك؟",
+        "أكثر شيء أسعدك اليوم؟",
+        "شيء تعترف انك فاشل فيه ؟",
+        "ماذا لو عاد معتذراً؟",
+        "متى يصبح الصديق غريب؟",
+        "يوم لا يمكنك نسيانه؟",
+        "لو فزعت/ي لصديق/ه وقالك مالك دخل وش بتسوي/ين؟",
+        "عمرك انتقمت من أحد ؟!",
+        "اسم مشهور فيه بعيلتك؟.",
+        "على نياتكُم تُرزقون منشن تيكن ينطبق علية هذا الشيء.؟",
+        "موقف محرج؟.",
+        "متى تحس أنك فعلًا أنسان صبور جدًا ؟",
+        "مع او ضد الصداقه بعد كره ؟.",
+        "كم ساعات نومك؟.",
+        "أقدم شيء محتفظ فيه من صغرك؟",
+        "تسامح شخص وجع قلبك ؟.",
+        "ما الذي يشغل بالك في الفترة الحالية؟",
+        "اغبى كذبه صدقتها بطفولتك؟.",
+        "منشن شخص تسمية خوي ومحزم.؟",
+        "اوصف نفسك بكلمة.؟",
+        "متى تقرر تنسحب من أي علاقة ؟",
+        "من الشخص الاقرب لقلبك؟.",
+        "اهل أمك او أبوك.؟",
+        "عاجبك وجودك في التلي ولا تتمنى تحذفة.؟",
+        "العتاب محبة ولا علامة رحيل.؟",
+        "تمحي العشرة الطيبة عشان موقف ماعجبك أو سوء فهم.؟",
+        "هل وصلك رسالة غير متوقعة من شخص وأثرت فيك ؟",
+        "فيلم عالق في ذهنك لا تنساه مِن روعته؟",
+        "انت جيد كم في المئة.؟",
+        "اول ولد لك وش راح تسميه ؟",
+        "ماذا لو عاد مُشتاقاً.؟",
+        "حب التملك في شخصِيـتك ولا ؟",
+        "وش أخر شي ضيعته؟",
+        "اسم أبوك؟.",
+        "وضعيتك وقت النوم؟.",
+        "‏- لو خيروك، الزواج بمن تُحب 💍 أو تأخذ مليون دولار💰؟",
+        "كم نسبة البيتوتية في شخصيتك؟",
+        "تحب القرائه؟.",
+        "وقت حزنك تلجأ لمن يخفف عنك.؟",
+        "اكثر مشروب تحبه؟",
+        "اشياء تفتخر انك م سويتها ؟",
+        "كلامك للمتنمرين الكترونياً وواقعياً.؟",
+        "شاركنا صورة احترافية من تصويرك؟",
+        "صديق أمك ولا أبوك. ؟",
+        "منشن لَ اكثر شخص تحبه موجود معانا؟.",
+        "افضل قناة تتابعها في التيليجرام  ..؟",
+        "منشن شخص ماينبلع.؟",
+        "‏- كشفت خيانة شريك حياتك دون أن يعلم، كيف تتصرف؟",
+        "‏تتوقع الإنسان يحس بقرب موته؟",
+        "صفة يطلقها عليك من حولك بكثرة؟",
+        "أكثر تغيير ترغب أن تغيّره في نفسك؟",
+        "كلمة أخذتها من شخص متعود تقولها.؟",
+        "المطوعة والعاقلة من شلتك.؟",
+        "مع أو ضد السماجة.؟",
+        "هل أنت من النوع الذي يواجه المشاكل أو من النوع الذي يهرب ؟",
+        "ما هو الأصعب بالنسبة لك؟ \n١. حفظ السر؟ \n٢. كتم الضحكة؟ \n٣. حبس الدموع؟",
+        "مع او ضد مقولة ( محد يدوم ل احد ) ؟",
+        "الاسود او الأبيض.؟",
+        "قدوتك من محيطك.؟",
+        "لو الحلال حرام ايش بتسوي؟.",
+        "اخر كلمة قالها لك حبيبك؟.",
+        "كلامك لأصحاب السب الإلكتروني.؟",
+        "إسم أمك؟.",
+        "ما السيء في هذه الحياة ؟",
+        "أكثر طبع تهتم بأن يتواجد في شريك/ة حياتك؟",
+        "افضل هديه ممكن تناسبك؟",
+        "تؤمن بالصُدف.؟",
+        "افضل روايه قريتيها؟.",
+        "نسبه الندم عندك للي وثقت فيهم ؟",
+        "أكثر حيوان تخاف منه؟",
+        "اخر خيانه؟.",
+        "تحس انك محظوظ بالاشخاص الي حولك.؟",
+        "مواصفات امير/ة احلامك؟.",
+        "أغنية عالقة في ذهنك هاليومين؟",
+        "السعاده بالنسبه لك تكون على هيئة...؟",
+        "اي شعور اقسى الشوق ولا الغيره؟.",
+        "كلمتك التسليكيه ؟",
+        "حسيت انك ظلمت شخص.؟",
+        "متئ يقدر الشخص يستفزك؟.",
+        "تجامل الناس ولا اللي بقلبك على لسانك؟",
+        "‏ تكره أحد من قلبك ؟",
+        "شيء عندك اهم من الناس؟",
+        "‏لوخيروك | الاكل ولاا النت ؟!",
+        "لو زوجتك تاكل تاكل وتحب الاكل وانت مَ تحب تكثر اكل وش بتكون ردة فعلك؟.",
+        "اغلب وقتك ضايع في؟",
+        "قلبي على قلبك مهما صار لمين تقولها؟",
+        "مع أو ضد لو كان خيراً لبقئ.؟",
+        "عندك غمازات؟.",
+        "كلمة تقولها لكل شخص منافق.؟",
+        "حيوانك المفضل؟",
+        "كم مره حبيت؟",
+        "شيء يعدل نفسيتك بثواني.؟",
+        "تحب الأطفال؟.",
+        "عندك فوبيا او خوف شديد من شيء معين ؟",
+        "اغنية عندك معاها ذكريات",
+        "كلمات ماتستغني عنها بسوالفك؟",
+        "نسبة رضاك عن الأشخاص من حولك هالفترة ؟",
+        "العين الي تستصغرك........؟",
+        "أكثر اكلهه تحبها؟.",
+        "كم تشوف انك تستحق فرصه؟",
+        "تصرُّف ماتتحمله؟",
+        "أول شيء يخطر في بالك إذا سمعت كلمة نجوم ؟",
+        "‏أيهما تختار أن يقودك :القلب - العقل؟",
+        "منشن لشخص تحب صوته؟.",
+        "شعورك الحالي في جملة؟",
+        "‏ هل يوجد صديق حقيقي في هذا الزمن؟",
+        "كم تحتاج من وقت لتثق بشخص؟",
+        "اكثر كلمة تنقال لك بالبيت ؟",
+        "من اصدق في الحب الولد ولا البنت؟.",
+        "هل انت شخص مادي.؟"}  
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
+if text == "تفعيل الرسائل اليوميه" and Owner(msg) then
+send(msg.chat_id_, msg.id_, '*𖣏︙تم تفعيل الرسائل اليوميه*')
+database:set(bot_id.."msg:match:"..msg.chat_id_,true)
+end
+if text == "تعطيل الرسائل اليوميه" and Owner(msg) then
+send(msg.chat_id_, msg.id_,'*𖣏︙تم تعطيل الرسائل اليوميه*')
+database:del(bot_id.." msg:match:"..msg.chat_id_)
+end
+if database:get(bot_id.."msg:match:"..msg.chat_id_) then
+if msg.content_.ID then
+get_msg = database:get(bot_id.."msg:match:"..msg.sender_user_id_..":"..msg.chat_id_) or 0
+gms = get_msg + 1
+database:setex(bot_id..'msg:match:'..msg.sender_user_id_..":"..msg.chat_id_,86400,gms)
+end
+if text == "تفاعلي اليوم" and tonumber(msg.reply_to_message_id_) == 0 then    
+get_msg = database:get(bot_id.."msg:match:"..msg.sender_user_id_..":"..msg.chat_id_) or 0
+send(msg.chat_id_, msg.id_,"*𖣏︙عدد رسائلك الكلي هو :-*\n"..get_msg.." *من الرسائل*")
+end  
+if text == "تفاعله اليوم" and tonumber(msg.reply_to_message_id_) > 0 then    
+if tonumber(msg.reply_to_message_id_) ~= 0 then 
+function prom_reply(extra, result, success) 
+get_msg = database:get(bot_id.."msg:match:"..result.sender_user_id_..":"..msg.chat_id_) or 0
+send(msg.chat_id_, msg.id_,"*𖣏︙عدد رسائل اشخص الكلي هو :-*\n"..get_msg.." *من الرسائل*")
+end  
+tdcli_function ({ID = "GetMessage",chat_id_=msg.chat_id_,message_id_=tonumber(msg.reply_to_message_id_)},prom_reply, nil)
+end
+end
+end
 if text and text:match("^طرد (%d+)$") and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
@@ -5272,13 +5446,13 @@ local username = text:match("^رفع منظف @(.*)$")
 function Function_Helen(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"𖣏︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 database:sadd(bot_id.."Helen:MN:TF"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم ترقيته منظف للمجموعه")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -5336,7 +5510,7 @@ if result.id_ then
 database:srem(bot_id.."Helen:MN:TF"..msg.chat_id_, result.id_)
 Reply_Status(msg,result.id_,"reply","𖣏︙تم تنزيله من منظفيه المجموعه")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد حساب بهاذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -6522,7 +6696,7 @@ if b.first_name_ == false then
 send(msg.chat_id_, msg.id_,"𖣏︙ حساب المنشئ محذوف")
 return false  
 end
-local UserName = (b.username_ or "KS_KK")
+local UserName = (b.username_ or "Ks_KK")
 send(msg.chat_id_, msg.id_,"𖣏︙منشئ المجموعه ~ ["..b.first_name_.."](T.me/"..UserName..")")  
 end,nil)   
 end
@@ -6542,7 +6716,7 @@ if b.first_name_ == false then
 send(msg.chat_id_, msg.id_,"𖣏︙حساب المنشئ محذوف")
 return false  
 end
-local UserName = (b.username_ or "KS_KK")
+local UserName = (b.username_ or "Ks_KK")
 send(msg.chat_id_, msg.id_,"𖣏︙تم ترقية منشئ المجموعه ~ ["..b.first_name_.."](T.me/"..UserName..")")  
 database:sadd(bot_id.."creator"..msg.chat_id_,b.id_)
 end,nil)   
@@ -7294,7 +7468,7 @@ local Add_Mem = database:get(bot_id.."Helen:Add:Memp"..msg.chat_id_..":"..data.i
 send(msg.chat_id_, msg.id_,'*𖣏︙ايديه - '..Id..'\n𖣏︙رسائله - '..NumMsg..'\n𖣏︙معرفه - *['..UserName_User..']*\n𖣏︙تفاعله - '..TotalMsg..'\n𖣏︙رتبته - '..Status_Gps..'\n𖣏︙تعديلاته - '..message_edit..'\n𖣏︙جهاته - '..Add_Mem..'\n𖣏︙نوع الكشف - بالمعرف \n*') 
 end,nil)   
 else
-send(msg.chat_id_, msg.id_,'𖣏︙لا يوجد حساب بهذا المعرف')
+send(msg.chat_id_, msg.id_,'𖣏︙لا يوجد حساب بهاذا المعرف')
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Helen, nil)
@@ -7315,7 +7489,7 @@ database:del(bot_id.."Tshak:Set:Sma"..msg.chat_id_)
 Random = {"🍏","🍎","🍐","🍊","🍋","🍉","🍇","🍓","🍈","🍒","🍑","🍍","🥥","🥝","🍅","🍆","🥑","🥦","🥒","🌶","🌽","🥕","🥔","🥖","??","🍞","🥨","🍟","🧀","🥚","🍳","🥓","🥩","🍗","🍖","🌭","🍔","🍠","🍕","🥪","🥙","☕️","🍵","🥤","🍶","🍺","🍻","🏀","⚽️","🏈","⚾️","🎾","🏐","🏉","🎱","🏓","🏸","🥅","🎰","🎮","🎳","🎯","🎲","🎻","🎸","🎺","🥁","🎹","🎼","🎧","🎤","🎬","🎨","🎭","🎪","🎟","𖣏","🎗","🏵","𖣏","🏆","🥌","🛷","🚗","🚌","🏎","🚓","🚑","🚚","🚛","🚜","🇮🇶","⚔","🛡","🔮","🌡","💣","𖣏","📍","📓","📗","𖣏","📅","📪","𖣏","𖣏","📭","⏰","📺","🎚","☎️","𖣏"}
 SM = Random[math.random(#Random)]
 database:set(bot_id.."Tshak:Random:Sm"..msg.chat_id_,SM)
-send(msg.chat_id_, msg.id_,"𖣏︙اسرع واحد يدز هذا السمايل ? ~ {`"..SM.."`}")
+send(msg.chat_id_, msg.id_,"𖣏︙اسرع واحد يدز هاذا السمايل ? ~ {`"..SM.."`}")
 return false
 end
 end
@@ -7856,7 +8030,7 @@ send(msg.chat_id_,msg.id_,"𖣏︙ليس لديك جواهر من الالعاب
 else
 local NUM_GAMES = database:get(bot_id.."Tshak:Add:Num"..msg.chat_id_..msg.sender_user_id_)
 if tonumber(NUMPY) > tonumber(NUM_GAMES) then
-send(msg.chat_id_,msg.id_,"\n𖣏︙ليس لديك جواهر بهذا العدد \n𖣏︙لزيادة مجوهراتك في اللعبه \n𖣏︙ارسل الالعاب وابدأ اللعب !") 
+send(msg.chat_id_,msg.id_,"\n𖣏︙ليس لديك جواهر بهاذا العدد \n𖣏︙لزيادة مجوهراتك في اللعبه \n𖣏︙ارسل الالعاب وابدأ اللعب !") 
 return false 
 end
 local NUMNKO = (NUMPY * 50)
@@ -8049,11 +8223,11 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendmessage?chat_id=' .. msg.sender_user_id_ .. '&text=' .. URL.escape(sender))
 end
 if text == "تعطيل الزخرفه" and Owner(msg) then
-send(msg.chat_id_, msg.id_, '𖣏 تم تعطيل الزخرفه')
+send(msg.chat_id_, msg.id_, '⌯ تم تعطيل الزخرفه')
 database:set(bot_id.."Helen:zhrf_Bots"..msg.chat_id_,"close")
 end
 if text == "تفعيل الزخرفه" and Owner(msg) then
-send(msg.chat_id_, msg.id_,'𖣏 تم تفعيل الزخرفه')
+send(msg.chat_id_, msg.id_,'⌯ تم تفعيل الزخرفه')
 database:set(bot_id.."Helen:zhrf_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^زخرفه (.*)$") and database:get(bot_id.."Helen:zhrf_Bots"..msg.chat_id_) == "open" then
@@ -8069,11 +8243,11 @@ end
 send(msg.chat_id_, msg.id_, t..' — — — — — — — — —\n𖣏︙اضغط على الاسم ليتم نسخه')
 end
 if text == "تعطيل الابراج" and Owner(msg) then
-send(msg.chat_id_, msg.id_, '𖣏 تم تعطيل الابراج')
+send(msg.chat_id_, msg.id_, '⌯ تم تعطيل الابراج')
 database:set(bot_id.."Helen:brj_Bots"..msg.chat_id_,"close")
 end
 if text == "تفعيل الابراج" and Owner(msg) then
-send(msg.chat_id_, msg.id_,'𖣏 تم تفعيل الابراج')
+send(msg.chat_id_, msg.id_,'⌯ تم تفعيل الابراج')
 database:set(bot_id.."Helen:brj_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^برج (.*)$") and database:get(bot_id.."Helen:brj_Bots"..msg.chat_id_) == "open" then
@@ -8083,11 +8257,11 @@ br = JSON.decode(gk)
 send(msg.chat_id_, msg.id_, br.ok.hso)
 end
 if text == "تعطيل حساب العمر" and Owner(msg) then
-send(msg.chat_id_, msg.id_, '𖣏 تم تعطيل حساب العمر')
+send(msg.chat_id_, msg.id_, '⌯ تم تعطيل حساب العمر')
 database:set(bot_id.."Helen:age_Bots"..msg.chat_id_,"close")
 end
 if text == "تفعيل حساب العمر" and Owner(msg) then
-send(msg.chat_id_, msg.id_,'𖣏 تم تفعيل حساب العمر')
+send(msg.chat_id_, msg.id_,'⌯ تم تفعيل حساب العمر')
 database:set(bot_id.."Helen:age_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^احسب (.*)$") and database:get(bot_id.."Helen:age_Bots"..msg.chat_id_) == "open" then
@@ -8097,11 +8271,11 @@ ag = JSON.decode(ge)
 send(msg.chat_id_, msg.id_, ag.ok.hso)
 end
 if text == "تعطيل الانستا" and Owner(msg) then
-send(msg.chat_id_, msg.id_, '𖣏 تم تعطيل الانستا')
+send(msg.chat_id_, msg.id_, '⌯ تم تعطيل الانستا')
 database:set(bot_id.."Helen:insta_bot"..msg.chat_id_,"close")
 end
 if text == "تفعيل الانستا" and Owner(msg) then
-send(msg.chat_id_, msg.id_,'𖣏 تم تفعيل الانستا')
+send(msg.chat_id_, msg.id_,'⌯ تم تفعيل الانستا')
 database:set(bot_id.."Helen:insta_bot"..msg.chat_id_,"open")
 end
 if text and text:match("^معلومات (.*)$") and database:get(bot_id.."Helen:insta_bot"..msg.chat_id_) == "open" then
@@ -8116,11 +8290,11 @@ end
 end
 end
 if text == "تعطيل الافلام" and Owner(msg) then
-send(msg.chat_id_, msg.id_, '𖣏 تم تعطيل الافلام')
+send(msg.chat_id_, msg.id_, '⌯ تم تعطيل الافلام')
 database:set(bot_id.."Helen:movie_bot"..msg.chat_id_,"close")
 end
 if text == "تفعيل الافلام" and Owner(msg) then
-send(msg.chat_id_, msg.id_,'𖣏 تم تفعيل الافلام')
+send(msg.chat_id_, msg.id_,'⌯ تم تفعيل الافلام')
 database:set(bot_id.."Helen:movie_bot"..msg.chat_id_,"open")
 end
 
@@ -8141,197 +8315,6 @@ https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. 
 end
 end
 end
-if text == "شنو رأيك بهذا" or text == "شنو رأيك بهذ" then
-local texting = {"ادب سسز يباوع علي بنات ????"," مو خوش ولد 😶","زاحف وما احبه 😾😹"}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-if text == "شنو رأيك بهاي" or text == "شنو رأيك بهايي" then
-local texting = {"دور حلوين 🤕😹","جكمه وصخه عوفها ☹️😾","حقيره ومنتكبره 😶😂"}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-if text == "هينه" or text == "رزله" then
-local texting = {"ولك هيو لتندك بسيادك لو بهاي 👞👈","ميستاهل اتعبي روحي ويا لانه عار","عوفه يروحي هذا طيز يضل يمضرط🤣"}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-if text == "مصه" or text == "بوسه" then
-local texting = {"مووووووووواححح????","مابوس ولي😌😹","خدك/ج نضيف 😂","البوسه بالف حمبي 🌝💋","خلي يزحفلي وابوسه 🙊😻","كل شويه ابوسه كافي 😏","ماابوسه والله هذا زاحف🦎","محح هاي لحاته صاكه??"}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-if text == "كت تويت" or text == "كت" then
-local texting = {  "آخر مرة زرت مدينة الملاهي؟",  "آخر مرة أكلت أكلتك المفضّلة؟",  "الوضع الحالي؟\n‏1. سهران\n‏2. ضايج\n‏3. أتأمل",  "آخر شيء ضاع منك؟","كلمة أخيرة لشاغل البال؟","طريقتك المعتادة في التخلّص من الطاقة السلبية؟","شهر من أشهر العام له ذكرى جميلة معك؟","كلمة غريبة من لهجتك ومعناها؟🤓","‏- شيء سمعته عالق في ذهنك هاليومين؟","متى تكره الشخص الذي أمامك حتى لو كنت مِن أشد معجبينه؟","‏- أبرز صفة حسنة في صديقك المقرب؟","هل تشعر أن هنالك مَن يُحبك؟","اذا اكتشفت أن أعز أصدقائك يضمر لك السوء، موقفك الصريح؟","أجمل شيء حصل معك خلال هاليوم؟","صِف شعورك وأنت تُحب شخص يُحب غيرك؟👀💔","كلمة لشخص غالي اشتقت إليه؟💕","آخر خبر سعيد، متى وصلك؟","أنا آسف على ....؟","أوصف نفسك بكلمة؟","صريح، مشتاق؟","‏- صريح، هل سبق وخذلت أحدهم ولو عن غير قصد؟","‏- ماذا ستختار من الكلمات لتعبر لنا عن حياتك التي عشتها الى الآن؟💭","‏- فنان/ة تود لو يدعوكَ على مائدة عشاء؟😁❤","‏- تخيّل شيء قد يحدث في المستقبل؟","‏- للشباب | آخر مرة وصلك غزل من فتاة؟🌚","شخص أو صاحب عوضك ونساك مُر الحياة ما اسمه ؟","| اذا شفت حد واعجبك وعندك الجرأه انك تروح وتتعرف عليه ، مقدمة الحديث شو راح تكون ؟.","تتابع انمي؟ إذا نعم ما أفضل انمي شاهدته",
-        "صوتك حلو ؟ .",
-        "دولة تحبها ومنشن شخص تتمنئ يرافقك.؟",
-        "يرد عليك متأخر على رسالة مهمة وبكل برود، موقفك؟",
-        "ما أكثر تطبيق تقضي وقتك عليه؟",
-        "وش احساسك وانت ولد بحساب بنت؟.",
-        "كلمة اشتقت وش ردك عليها من شخص ماتعرفة.؟",
-        "تحس انك مستعد للقاء الله ولا باقي.؟",
-        "مع أو ضد الحب بعد الزواج.؟",
-        "‏- كُنت تمازح أحد أصدقائك ثم بكى بسبب كلمة لم تعرف بأنها تجرحه، ردة فعلك؟",
-        "منشن لشخص وقوله  أعترف لك.؟",
-        "ردة فعلك لمن يتجاهلك بالرد متعمد؟",
-        "منشن لشخص مشتاق لحضنه؟.",
-        "كيف تحد الدولة من الفقر المُتزايد.؟",
-        "كلمة لشخص أسعدك رغم حزنك في يومٍ من الأيام ؟",
-        "الزمن الجميل او عصر التكنلوجيا.؟",
-        "موقف خلاك تحس انك مكسور ؟",
-        "ما هو أفضل حافز للشخص؟",
-        "يومك ضاع على؟",
-        "لو انظلم أحد قدامك تدافع عنه ولا تطنش.؟",
-        "عادي تتزوج من برا القبيلة؟",
-        "أجمل شيء حصل معك خلال هذا الاسبوع ؟",
-        "وش رايك بصداقة البنت والولد إلكترونياً؟.",
-        "أتمنى اكون بعد عشر سنين في ........؟",
-        "كلمة لشخص بعيد؟",
-        "‏- تقبل بالعودة لشخص كسر قلبك مرتين؟",
-        "كلمة تنرفزك.؟",
-        "بماذا يتعافى المرء؟",
-        "اسواء طبع فيك؟",
-        "تخطط للمستقبل ولا ؟",
-        "تفضّل النقاش الطويل او تحب الاختصار ؟",
-        "وقفة إحترام للي إخترع ؟",
-        "كلمتين تكررها دايم؟!",
-        "تزعلك الدنيا ويرضيك ؟",
-        "القصيدة اللي تأثر فيك؟",
-        "أكثر شيء أسعدك اليوم؟",
-        "شيء تعترف انك فاشل فيه ؟",
-        "ماذا لو عاد معتذراً؟",
-        "متى يصبح الصديق غريب؟",
-        "يوم لا يمكنك نسيانه؟",
-        "لو فزعت/ي لصديق/ه وقالك مالك دخل وش بتسوي/ين؟",
-        "عمرك انتقمت من أحد ؟!",
-        "اسم مشهور فيه بعيلتك؟.",
-        "على نياتكُم تُرزقون منشن تيكن ينطبق علية هذا الشيء.؟",
-        "موقف محرج؟.",
-        "متى تحس أنك فعلًا أنسان صبور جدًا ؟",
-        "مع او ضد الصداقه بعد كره ؟.",
-        "كم ساعات نومك؟.",
-        "أقدم شيء محتفظ فيه من صغرك؟",
-        "تسامح شخص وجع قلبك ؟.",
-        "ما الذي يشغل بالك في الفترة الحالية؟",
-        "اغبى كذبه صدقتها بطفولتك؟.",
-        "منشن شخص تسمية خوي ومحزم.؟",
-        "اوصف نفسك بكلمة.؟",
-        "متى تقرر تنسحب من أي علاقة ؟",
-        "من الشخص الاقرب لقلبك؟.",
-        "اهل أمك او أبوك.؟",
-        "عاجبك وجودك في التلي ولا تتمنى تحذفة.؟",
-        "العتاب محبة ولا علامة رحيل.؟",
-        "تمحي العشرة الطيبة عشان موقف ماعجبك أو سوء فهم.؟",
-        "هل وصلك رسالة غير متوقعة من شخص وأثرت فيك ؟",
-        "فيلم عالق في ذهنك لا تنساه مِن روعته؟",
-        "انت جيد كم في المئة.؟",
-        "اول ولد لك وش راح تسميه ؟",
-        "ماذا لو عاد مُشتاقاً.؟",
-        "حب التملك في شخصِيـتك ولا ؟",
-        "وش أخر شي ضيعته؟",
-        "اسم أبوك؟.",
-        "وضعيتك وقت النوم؟.",
-        "‏- لو خيروك، الزواج بمن تُحب 💍 أو تأخذ مليون دولار💰؟",
-        "كم نسبة البيتوتية في شخصيتك؟",
-        "تحب القرائه؟.",
-        "وقت حزنك تلجأ لمن يخفف عنك.؟",
-        "اكثر مشروب تحبه؟",
-        "اشياء تفتخر انك م سويتها ؟",
-        "كلامك للمتنمرين الكترونياً وواقعياً.؟",
-        "شاركنا صورة احترافية من تصويرك؟",
-        "صديق أمك ولا أبوك. ؟",
-        "منشن لَ اكثر شخص تحبه موجود معانا؟.",
-        "افضل قناة تتابعها في التيليجرام  ..؟",
-        "منشن شخص ماينبلع.؟",
-        "‏- كشفت خيانة شريك حياتك دون أن يعلم، كيف تتصرف؟",
-        "‏تتوقع الإنسان يحس بقرب موته؟",
-        "صفة يطلقها عليك من حولك بكثرة؟",
-        "أكثر تغيير ترغب أن تغيّره في نفسك؟",
-        "كلمة أخذتها من شخص متعود تقولها.؟",
-        "المطوعة والعاقلة من شلتك.؟",
-        "مع أو ضد السماجة.؟",
-        "هل أنت من النوع الذي يواجه المشاكل أو من النوع الذي يهرب ؟",
-        "ما هو الأصعب بالنسبة لك؟ \n١. حفظ السر؟ \n٢. كتم الضحكة؟ \n٣. حبس الدموع؟",
-        "مع او ضد مقولة ( محد يدوم ل احد ) ؟",
-        "الاسود او الأبيض.؟",
-        "قدوتك من محيطك.؟",
-        "لو الحلال حرام ايش بتسوي؟.",
-        "اخر كلمة قالها لك حبيبك؟.",
-        "كلامك لأصحاب السب الإلكتروني.؟",
-        "إسم أمك؟.",
-        "ما السيء في هذه الحياة ؟",
-        "أكثر طبع تهتم بأن يتواجد في شريك/ة حياتك؟",
-        "افضل هديه ممكن تناسبك؟",
-        "تؤمن بالصُدف.؟",
-        "افضل روايه قريتيها؟.",
-        "نسبه الندم عندك للي وثقت فيهم ؟",
-        "أكثر حيوان تخاف منه؟",
-        "اخر خيانه؟.",
-        "تحس انك محظوظ بالاشخاص الي حولك.؟",
-        "مواصفات امير/ة احلامك؟.",
-        "أغنية عالقة في ذهنك هاليومين؟",
-        "السعاده بالنسبه لك تكون على هيئة...؟",
-        "اي شعور اقسى الشوق ولا الغيره؟.",
-        "كلمتك التسليكيه ؟",
-        "حسيت انك ظلمت شخص.؟",
-        "متئ يقدر الشخص يستفزك؟.",
-        "تجامل الناس ولا اللي بقلبك على لسانك؟",
-        "‏ تكره أحد من قلبك ؟",
-        "شيء عندك اهم من الناس؟",
-        "‏لوخيروك | الاكل ولاا النت ؟!",
-        "لو زوجتك تاكل تاكل وتحب الاكل وانت مَ تحب تكثر اكل وش بتكون ردة فعلك؟.",
-        "اغلب وقتك ضايع في؟",
-        "قلبي على قلبك مهما صار لمين تقولها؟",
-        "مع أو ضد لو كان خيراً لبقئ.؟",
-        "عندك غمازات؟.",
-        "كلمة تقولها لكل شخص منافق.؟",
-        "حيوانك المفضل؟",
-        "كم مره حبيت؟",
-        "شيء يعدل نفسيتك بثواني.؟",
-        "تحب الأطفال؟.",
-        "عندك فوبيا او خوف شديد من شيء معين ؟",
-        "اغنية عندك معاها ذكريات",
-        "كلمات ماتستغني عنها بسوالفك؟",
-        "نسبة رضاك عن الأشخاص من حولك هالفترة ؟",
-        "العين الي تستصغرك........؟",
-        "أكثر اكلهه تحبها؟.",
-        "كم تشوف انك تستحق فرصه؟",
-        "تصرُّف ماتتحمله؟",
-        "أول شيء يخطر في بالك إذا سمعت كلمة نجوم ؟",
-        "‏أيهما تختار أن يقودك :القلب - العقل؟",
-        "منشن لشخص تحب صوته؟.",
-        "شعورك الحالي في جملة؟",
-        "‏ هل يوجد صديق حقيقي في هذا الزمن؟",
-        "كم تحتاج من وقت لتثق بشخص؟",
-        "اكثر كلمة تنقال لك بالبيت ؟",
-        "من اصدق في الحب الولد ولا البنت؟.",
-        "هل انت شخص مادي.؟"}  
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-if text == "تفعيل الرسائل اليوميه" and Owner(msg) then
-send(msg.chat_id_, msg.id_, '*𖣏︙تم تفعيل الرسائل اليوميه*')
-database:set(bot_id.."msg:match:"..msg.chat_id_,true)
-end
-if text == "تعطيل الرسائل اليوميه" and Owner(msg) then
-send(msg.chat_id_, msg.id_,'*𖣏︙تم تعطيل الرسائل اليوميه*')
-database:del(bot_id.." msg:match:"..msg.chat_id_)
-end
-if database:get(bot_id.."msg:match:"..msg.chat_id_) then
-if msg.content_.ID then
-get_msg = database:get(bot_id.."msg:match:"..msg.sender_user_id_..":"..msg.chat_id_) or 0
-gms = get_msg + 1
-database:setex(bot_id..'msg:match:'..msg.sender_user_id_..":"..msg.chat_id_,86400,gms)
-end
-if text == "تفاعلي اليوم" and tonumber(msg.reply_to_message_id_) == 0 then    
-get_msg = database:get(bot_id.."msg:match:"..msg.sender_user_id_..":"..msg.chat_id_) or 0
-send(msg.chat_id_, msg.id_,"*𖣏︙عدد رسائلك الكلي هو :-*\n"..get_msg.." *من الرسائل*")
-end  
-if text == "تفاعله اليوم" and tonumber(msg.reply_to_message_id_) > 0 then    
-if tonumber(msg.reply_to_message_id_) ~= 0 then 
-function prom_reply(extra, result, success) 
-get_msg = database:get(bot_id.."msg:match:"..result.sender_user_id_..":"..msg.chat_id_) or 0
-send(msg.chat_id_, msg.id_,"*𖣏︙عدد رسائل اشخص الكلي هو :-*\n"..get_msg.." *من الرسائل*")
-end  
-tdcli_function ({ID = "GetMessage",chat_id_=msg.chat_id_,message_id_=tonumber(msg.reply_to_message_id_)},prom_reply, nil)
-end
-end
-end
 if text == "غنيلي" then
 data,res = https.request('https://black-source.tk/BlackTeAM/audios.php')
 if res == 200 then
@@ -8340,8 +8323,7 @@ if audios.Info == true then
 local Text ='𖣏︙تم اختيار المقطع الصوتي لك'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '- Helen TeAM .',url="t.me/KS_KK"}},
-{{text = '- هيلين .',url="t.me/SR_JO"}},
+{{text = '- Helen TeAM .',url="t.me/Ks_KK"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -8675,7 +8657,7 @@ if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or tex
 local url,res = https.request('https://sjod.ga/API/Sub/index.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.info ~= true then
-send(msg.chat_id_,msg.id_,'𖣏︙شترك في قناة السورس اولآ @KS_KK .')   
+send(msg.chat_id_,msg.id_,'𖣏︙شترك في قناة السورس اولآ @SR_JO .')   
 return false 
 end
 Text = [[
@@ -8685,7 +8667,7 @@ Text = [[
      
 [ 𖣏︙  Source Dev .](http://t.me/vvvvFv)
 
-[ 𖣏︙ Helen Maker  .](http://t.me/Nx8BoT)
+[ 𖣏︙ Helen Maker  .](http://t.me/xWuBoT)
 ]]
 send(msg.chat_id_, msg.id_,Text)
 end
@@ -9516,7 +9498,7 @@ local A = io.open("sudo.lua", 'w')
 A:write([[
 s = "vvvvFv"
 
-q = "KS_KK"
+q = "Ks_KK"
 
 token = "]]..token..[["
 
@@ -9800,8 +9782,8 @@ if text == "تحديث السورس 𖣏" then
 send(msg.chat_id_,msg.id_,'𖣏︙تم التحديث')
 os.execute('rm -rf Helen.lua')
 os.execute('rm -rf start.lua')
-os.execute('wget https://raw.githubusercontent.com/Helen/Helen/master/Helen.lua')
-os.execute('wget https://raw.githubusercontent.com/Helen/Helen/master/start.lua')
+os.execute('wget https://raw.githubusercontent.com/VvVvFv/Helen/master/Helen.lua')
+os.execute('wget https://raw.githubusercontent.com/VvVvFv/Helen/master/start.lua')
 dofile('Helen.lua')  
 return false
 end
@@ -9831,7 +9813,7 @@ local idchci = "-100"..idch
 local animation = DAata:match("^animation(.*)$"):gsub('chatid',''):gsub('chatid',''):gsub(idch,''):gsub('-100','')
 local Text ="𖣏︙تم اللغاء منعها بنجاح"
 inline = {
-{{text = '𖣏︙ Helen 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/KS_KK'}},
+{{text = '𖣏︙ Helen 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/Ks_KK'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -9842,7 +9824,7 @@ local idchci = database:get(bot_id.."Helen:Filter:msg")
 local photo = DAata:match("^pito(.*)$")
 local Text ="𖣏︙تم اللغاء منعها بنجاح"
 inline = {
-{{text = '𖣏︙ Helen 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/KS_KK'}},
+{{text = '𖣏︙ Helen 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/Ks_KK'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -9854,7 +9836,7 @@ local idchci = "-100"..idch
 local Sticker = DAata:match("^Sticker(.*)$"):gsub('chatid',''):gsub('chatid',''):gsub(idch,''):gsub('-100','')
 local Text ="𖣏︙تم اللغاء منعه بنجاح"
 inline = {
-{{text = '𖣏︙ Helen 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/KS_KK'}},
+{{text = '𖣏︙ Helen 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/Ks_KK'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -9864,7 +9846,7 @@ if DAata and DAata:match("^delallSticker(.*)$") and Addictive(data) then
 local delallSticker = DAata:match("^delallSticker(.*)$")
 local Text ="𖣏︙تم اللغاء منع كل المتحركات"
 inline = {
-{{text = '𖣏︙ Helen 𝖲𝗈𝗎𝗋𝖼??  .',url='http://t.me/KS_KK'}},
+{{text = '𖣏︙ Helen 𝖲𝗈𝗎𝗋𝖼??  .',url='http://t.me/Ks_KK'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -9877,7 +9859,7 @@ if DAata and DAata:match("^delallanimation(.*)$") and Addictive(data) then
 local delallmation = DAata:match("^delallanimation(.*)$")
 local Text ="𖣏︙تم اللغاء منع كل المتحركات"
 inline = {
-{{text = '𖣏︙ Helen 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/KS_KK'}},
+{{text = '𖣏︙ Helen 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/Ks_KK'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -9890,7 +9872,7 @@ if DAata and DAata:match("^delallph(.*)$") and Addictive(data) then
 local delallph = DAata:match("^delallph(.*)$")
 local Text ="𖣏︙تم اللغاء منع كل الصور"
 inline = {
-{{text = '𖣏︙ Helen 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/KS_KK'}},
+{{text = '𖣏︙ Helen 𝖲𝗈𝗎𝗋𝖼𝖾  .',url='http://t.me/Ks_KK'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -10004,7 +9986,7 @@ database:del(bot_id.."Helen:Set:Cmd:Group:New"..msg.chat_id_)
 database:srem(bot_id.."Helen:List:Cmd:Group:New"..msg.chat_id_,text)
 send(msg.chat_id_, msg.id_,"𖣏︙تم ازالة الامر من المجموعه")  
 else
-send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد امر بهذا الاسم تاكد من الامر واعد المحاوله")  
+send(msg.chat_id_, msg.id_,"𖣏︙لا يوجد امر بهاذا الاسم تاكد من الامر واعد المحاوله")  
 end
 database:del(bot_id.."Helen:Del:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_)
 return false
@@ -10018,7 +10000,7 @@ end
 end
 local Name_Bot = (database:get(bot_id.."Helen:Name:Bot") or "هيلين")
 if not database:get(bot_id.."Helen:Fun_Bots"..msg.chat_id_) then
-if text ==  ""..Name_Bot..' شنو رأيك بهذا' and tonumber(msg.reply_to_message_id_) > 0 then     
+if text ==  ""..Name_Bot..' شنو رئيك بهاذا' and tonumber(msg.reply_to_message_id_) > 0 then     
 function FunBot(extra, result, success) 
 local Fun = {'لوكي وزاحف من ساع زحفلي وحضرته 😒','خوش ولد و ورده مال الله 🙄','يلعب ع البنات 🙄', 'ولد زايعته الكاع 😶🙊','صاك يخبل ومعضل ','محلو وشواربه جنها مكناسه 😂🤷🏼‍♀️','اموت عليه 🌝','هوه غير الحب مال اني ❤️','مو خوش ولد صراحه ☹️','ادبسز وميحترم البنات  ', 'فد واحد قذر 🙄😒','ماطيقه كل ما اكمشه ريحته جنها بخاخ بف باف مال حشرات 😂🤷‍♀️','مو خوش ولد 🤓' } 
 send(msg.chat_id_, result.id_,''..Fun[math.random(#Fun)]..'')   
@@ -10026,7 +10008,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunBot, nil)
 return false
 end  
-if text == ""..Name_Bot..' شنو رأيك بهاي' and tonumber(msg.reply_to_message_id_) > 0 then    
+if text == ""..Name_Bot..' شنو رئيك بهاي' and tonumber(msg.reply_to_message_id_) > 0 then    
 function FunBot(extra, result, success) 
 local Fun = {'الكبد مال اني هيه ','ختولي ماحبها ','خانتني ويه صديقي 😔','بس لو الكفها اله اعضها 💔','خوش بنيه بس عده مكسرات زايده وناقصه منا ومنا وهيه تدري بنفسها 😒','جذابه ومنافقه سوتلي مشكله ويه الحب مالتي ','ئووووووووف اموت ع ربها ','ديرو بالكم منها تلعب ع الولد 😶 ضحكت ع واحد قطته ايفون 7 ','صديقتي وختي وروحي وحياتي ','فد وحده منحرفه 😥','ساكنه بالعلاوي ونته حدد بعد لسانها لسان دلاله 🙄🤐','ام سحوره سحرت اخويا وعلكته 6 سنوات 🤕','ماحبها 🙁','بله هاي جهره تسئل عليها ؟ ','بربك ئنته والله فارغ وبطران وماعدك شي تسوي جاي تسئل ع بنات العالم ولي يله 🏼','ياخي بنيه حبوبه بس لبعرك معمي عليها تشرب هواي 😹' } 
 send(msg.chat_id_,result.id_,''..Fun[math.random(#Fun)]..'') 
